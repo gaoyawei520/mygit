@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Demo4会员"
+           tests="15"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="275.733">
+  <properties />
+  
+  
+            <testcase name="shunbiandai" time="7.036" classname="Huiyuan_test" />
+                <testcase name="shezhangedu" time="26.830" classname="Huiyuan_test" />
+                <testcase name="huiyuandingdan" time="15.952" classname="Huiyuan_test" />
+                <testcase name="huankuan" time="38.954" classname="Huiyuan_test" />
+                <testcase name="zengpinquan" time="5.121" classname="Huiyuan_test" />
+                <testcase name="启动等待" time="9.001" classname="Huiyuan_test" />
+                <testcase name="huiyuanjia" time="18.805" classname="Huiyuan_test" />
+                <testcase name="search" time="19.294" classname="Huiyuan_test" />
+                <testcase name="huiyuanliebiao" time="6.564" classname="Huiyuan_test" />
+                <testcase name="biaoqian" time="6.171" classname="Huiyuan_test" />
+                <testcase name="zengsonghongbao" time="26.824" classname="Huiyuan_test" />
+                <testcase name="huiyuanzhuangtai" time="27.125" classname="Huiyuan_test" />
+                <testcase name="huiyuanbianji" time="18.843" classname="Huiyuan_test" />
+                <testcase name="huiyuanxinzeng" time="27.294" classname="Huiyuan_test" />
+                <testcase name="biangengleixing" time="21.919" classname="Huiyuan_test" />
+      
+</testsuite>

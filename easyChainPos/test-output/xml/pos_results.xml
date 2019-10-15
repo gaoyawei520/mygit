@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="pos"
+           tests="18"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="406.226">
+  <properties />
+  
+  
+            <testcase name="tuihuo3" time="72.015" classname="pos" />
+                <testcase name="set2" time="15.715" classname="pos" />
+                <testcase name="tuihuo2" time="37.503" classname="pos" />
+                <testcase name="suoding" time="6.836" classname="pos" />
+                <testcase name="jiedan" time="5.443" classname="pos" />
+                <testcase name="tuihuo1" time="44.111" classname="pos" />
+                <testcase name="more" time="10.087" classname="pos" />
+                <testcase name="jiaojieban" time="18.741" classname="pos" />
+                <testcase name="empty" time="27.005" classname="pos" />
+                <testcase name="set1" time="16.569" classname="pos" />
+                <testcase name="set3" time="6.026" classname="pos" />
+                <testcase name="delete" time="26.566" classname="pos" />
+                <testcase name="login" time="9.555" classname="pos" />
+                <testcase name="shouyin4" time="18.073" classname="pos" />
+                <testcase name="guadan" time="23.880" classname="pos" />
+                <testcase name="shouyin1" time="23.096" classname="pos" />
+                <testcase name="shouyin2" time="16.315" classname="pos" />
+                <testcase name="shouyin3" time="28.690" classname="pos" />
+      
+</testsuite>

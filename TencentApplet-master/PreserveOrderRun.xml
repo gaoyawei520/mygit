@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Preserve order test runs">
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+    <test name="test" preserve-order="true">
+        <classes>
+            <class name="POSAutomationtest.RunTestCase">
+                <methods>
+                    <include name="AccessApplet"/><!--1-->
+                    <include name="buyItem"/><!--1-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Boss">
+    <!-- ReportNG监听器-->
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter" />
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+        <!--<listener class-name="com.edusoho.util.ScreenFailtureListener"/>-->
+    </listeners>
+
+   <!-- <test name="Demo1" verbose="2"  preserve-order="true">
+      <classes>
+          <class name="Demo1" />
+      </classes>
+    </test>-->
+
+  <!--  <test name="Demo2" verbose="2"  preserve-order="true">   &lt;!&ndash;true表示按照顺序执行&ndash;&gt;
+        <classes>
+            <class name="Demo2" />
+        </classes>
+    </test>-->
+
+     <test name="Demo3商品" verbose="2">
+        <classes>
+            <class name="shangpincase" ></class>
+        </classes>
+    </test>
+
+    <test name="Demo4会员" verbose="2">
+        <classes>
+            <class name="Huiyuan_test" ></class>
+        </classes>
+    </test>
+
+
+    <!--<test name="Demo5其他" verbose="2">
+        <classes>
+            <class name="RunTestnew" />
+        </classes>
+    </test>-->
+
+
+</suite>

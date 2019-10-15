@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Demo3商品"
+           tests="10"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="356.958">
+  <properties />
+  
+  
+            <testcase name="置顶" time="7.411" classname="shangpincase" />
+                <testcase name="进货" time="30.389" classname="shangpincase" />
+                <testcase name="启动等待" time="9.000" classname="shangpincase" />
+                <testcase name="成本价提成作废" time="57.407" classname="shangpincase" />
+                <testcase name="外采" time="40.074" classname="shangpincase" />
+                <testcase name="改价规格" time="90.788" classname="shangpincase" />
+                <testcase name="编辑" time="49.295" classname="shangpincase" />
+                <testcase name="作废商品" time="16.847" classname="shangpincase" />
+                <testcase name="商品盘存" time="24.659" classname="shangpincase" />
+                <testcase name="搜索" time="31.088" classname="shangpincase" />
+      
+</testsuite>
