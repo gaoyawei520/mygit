@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="022050d4-b09b-4aad-bc71-c1418795df1a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Boss/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../easyChainPos/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../easyChainPos/src/test/java/pda.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Boss/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Boss/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Hello/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Hello/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hello/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Hello/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../easyChainPos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../easyChainPos/src/test/java/pos.java" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/src/test/java/pos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../easyChainPos/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/testng.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -105,6 +104,7 @@
           <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.3" value="4" />
           <entry key="project.open.time.31" value="1" />
@@ -115,12 +115,12 @@
           <entry key="project.open.time.4" value="5" />
           <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.42" value="1" />
-          <entry key="project.open.time.5" value="8" />
-          <entry key="project.open.time.6" value="2" />
-          <entry key="project.open.time.7" value="2" />
-          <entry key="project.open.time.8" value="2" />
+          <entry key="project.open.time.5" value="10" />
+          <entry key="project.open.time.6" value="4" />
+          <entry key="project.open.time.7" value="3" />
+          <entry key="project.open.time.8" value="4" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="46" />
+          <entry key="project.opened" value="54" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -211,7 +211,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/RunTestCase.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
-              <caret line="323" column="40" lean-forward="true" selection-start-line="323" selection-start-column="40" selection-end-line="323" selection-end-column="40" />
+              <caret line="323" column="40" selection-start-line="323" selection-start-column="40" selection-end-line="323" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -316,8 +316,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -366,6 +364,8 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -516,7 +516,15 @@
       <workItem from="1570843774145" duration="7942000" />
       <workItem from="1571039975930" duration="598000" />
       <workItem from="1571103480941" duration="555000" />
-      <workItem from="1571204864830" duration="1493000" />
+      <workItem from="1571204864830" duration="2982000" />
+      <workItem from="1571293195769" duration="598000" />
+      <workItem from="1571726919571" duration="660000" />
+      <workItem from="1571795100494" duration="1199000" />
+      <workItem from="1572262408581" duration="599000" />
+      <workItem from="1572341337125" duration="597000" />
+      <workItem from="1572399066657" duration="589000" />
+      <workItem from="1572504529347" duration="599000" />
+      <workItem from="1572578656234" duration="597000" />
     </task>
     <servers />
   </component>
@@ -553,12 +561,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97402000" />
+    <option name="totallyTimeSpent" value="104329000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="257" y="160" width="1400" height="1000" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12739871" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1597015" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -794,7 +803,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/RunTestCase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
-          <caret line="323" column="40" lean-forward="true" selection-start-line="323" selection-start-column="40" selection-end-line="323" selection-end-column="40" />
+          <caret line="323" column="40" selection-start-line="323" selection-start-column="40" selection-end-line="323" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

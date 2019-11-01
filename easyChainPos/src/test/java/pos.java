@@ -98,7 +98,7 @@ public class pos {
 
     }
 
-//    @Test(priority = 2)//切换环境为pre,兼容性测试专用
+    //@Test(priority = 2)//切换环境为pre,兼容性测试专用
     public void checkout() throws InterruptedException {
         driver.findElementByAndroidUIAutomator("text(\"设置\")").click();
         driver.findElementByAndroidUIAutomator("text(\"修改密码\")").click();

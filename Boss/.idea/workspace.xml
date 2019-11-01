@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="022050d4-b09b-4aad-bc71-c1418795df1a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../easyChainPos/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../retailPos/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../easyChainPos/src/test/java/pda.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Hello/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Hello/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hello/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Hello/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../easyChainPos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../easyChainPos/src/test/java/pos.java" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/src/test/java/pos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../easyChainPos/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/testng.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../retailPos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../retailPos/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -93,6 +92,7 @@
           <entry key="project.closed" value="13" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.134" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.31" value="1" />
@@ -107,9 +107,9 @@
           <entry key="project.open.time.41" value="4" />
           <entry key="project.open.time.42" value="5" />
           <entry key="project.open.time.43" value="5" />
-          <entry key="project.open.time.44" value="1" />
-          <entry key="project.open.time.45" value="1" />
-          <entry key="project.open.time.46" value="1" />
+          <entry key="project.open.time.44" value="3" />
+          <entry key="project.open.time.45" value="2" />
+          <entry key="project.open.time.46" value="5" />
           <entry key="project.open.time.47" value="2" />
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.50" value="1" />
@@ -120,7 +120,7 @@
           <entry key="project.open.time.62" value="1" />
           <entry key="project.open.time.70" value="1" />
           <entry key="project.open.time.95" value="1" />
-          <entry key="project.opened" value="52" />
+          <entry key="project.opened" value="60" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -180,10 +180,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/RunTestnew.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
+            <state relative-caret-position="27607">
               <caret line="1466" column="52" selection-start-line="1466" selection-start-column="52" selection-end-line="1466" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -241,11 +241,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/BaseForShopKeeper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="33" column="103" selection-start-line="33" selection-start-column="103" selection-end-line="33" selection-end-column="103" />
+            <state relative-caret-position="224">
+              <caret line="56" column="43" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -275,6 +275,7 @@
     <findStrings>
       <find>AppiumFieldDecorator</find>
       <find>huadong</find>
+      <find>list</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -311,7 +312,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="257" />
     <option name="y" value="160" />
     <option name="width" value="1400" />
@@ -323,7 +324,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -383,6 +383,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -613,6 +614,14 @@
       <workItem from="1571039976553" duration="11818000" />
       <workItem from="1571103482000" duration="612000" />
       <workItem from="1571204863594" duration="1200000" />
+      <workItem from="1571293194261" duration="598000" />
+      <workItem from="1571726918204" duration="596000" />
+      <workItem from="1571795099062" duration="598000" />
+      <workItem from="1572262406078" duration="1888000" />
+      <workItem from="1572341334398" duration="596000" />
+      <workItem from="1572399060846" duration="589000" />
+      <workItem from="1572504527472" duration="599000" />
+      <workItem from="1572578653816" duration="598000" />
     </task>
     <servers />
   </component>
@@ -649,12 +658,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="215474000" />
+    <option name="totallyTimeSpent" value="221536000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="257" y="160" width="1400" height="1000" extended-state="1" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15298508" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16940299" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -672,7 +682,7 @@
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" visible="true" weight="0.20824295" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" visible="true" weight="0.18244803" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32936078" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -817,6 +827,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/RunTestnew.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27607">
+          <caret line="1466" column="52" selection-start-line="1466" selection-start-column="52" selection-end-line="1466" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MainPageForShopKeeper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16777">
@@ -858,16 +878,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BaseForShopKeeper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="33" column="103" selection-start-line="33" selection-start-column="103" selection-end-line="33" selection-end-column="103" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/io/appium/java-client/7.0.0/java-client-7.0.0-sources.jar!/io/appium/java_client/remote/MobileCapabilityType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="855">
@@ -875,10 +885,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/RunTestnew.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/BaseForShopKeeper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="1466" column="52" selection-start-line="1466" selection-start-column="52" selection-end-line="1466" selection-end-column="52" />
+        <state relative-caret-position="224">
+          <caret line="56" column="43" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
