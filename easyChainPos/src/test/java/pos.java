@@ -691,8 +691,8 @@ public class pos {
         driver.findElementById(packagename+":id/userPwdET").sendKeys("607980");
         driver.findElementById(packagename+":id/loginBtn").click();//登录
         Thread.sleep(5000);
-        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
-        Thread.sleep(3000);
+        //driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
+        //Thread.sleep(3000);
         Reporter.log("离线收银");
     }
 

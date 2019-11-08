@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="022050d4-b09b-4aad-bc71-c1418795df1a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../easyChainPos/src/test/java/pda.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hello/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Hello/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../easyChainPos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../easyChainPos/src/test/java/pda.java" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/src/test/java/pda.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../easyChainPos/src/test/java/pos.java" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/src/test/java/pos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easyChainPos/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../easyChainPos/target/test-classes/pda.class" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/target/test-classes/pda.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../easyChainPos/target/test-classes/pos.class" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/target/test-classes/pos.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../retailPos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../retailPos/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -89,7 +90,7 @@
     <session id="-1217610001">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.134" value="1" />
@@ -107,20 +108,21 @@
           <entry key="project.open.time.41" value="4" />
           <entry key="project.open.time.42" value="5" />
           <entry key="project.open.time.43" value="5" />
-          <entry key="project.open.time.44" value="3" />
-          <entry key="project.open.time.45" value="2" />
+          <entry key="project.open.time.44" value="5" />
+          <entry key="project.open.time.45" value="3" />
           <entry key="project.open.time.46" value="5" />
           <entry key="project.open.time.47" value="2" />
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.50" value="1" />
+          <entry key="project.open.time.51" value="1" />
           <entry key="project.open.time.52" value="1" />
           <entry key="project.open.time.54" value="1" />
           <entry key="project.open.time.56" value="3" />
           <entry key="project.open.time.57" value="1" />
-          <entry key="project.open.time.62" value="1" />
+          <entry key="project.open.time.62" value="2" />
           <entry key="project.open.time.70" value="1" />
           <entry key="project.open.time.95" value="1" />
-          <entry key="project.opened" value="60" />
+          <entry key="project.opened" value="65" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -244,8 +246,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/BaseForShopKeeper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="56" column="43" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="43" />
+            <state relative-caret-position="338">
+              <caret line="62" column="38" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -312,7 +314,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="257" />
     <option name="y" value="160" />
     <option name="width" value="1400" />
@@ -325,6 +327,8 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -382,8 +386,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -622,6 +624,11 @@
       <workItem from="1572399060846" duration="589000" />
       <workItem from="1572504527472" duration="599000" />
       <workItem from="1572578653816" duration="598000" />
+      <workItem from="1572832434212" duration="594000" />
+      <workItem from="1572936804389" duration="982000" />
+      <workItem from="1573009310350" duration="593000" />
+      <workItem from="1573096073997" duration="597000" />
+      <workItem from="1573204057199" duration="593000" />
     </task>
     <servers />
   </component>
@@ -658,13 +665,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="221536000" />
+    <option name="totallyTimeSpent" value="224895000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="257" y="160" width="1400" height="1000" extended-state="1" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16940299" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09168444" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -682,7 +689,7 @@
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" visible="true" weight="0.18244803" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" visible="true" weight="0.16052061" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32936078" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -887,8 +894,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BaseForShopKeeper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="56" column="43" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="43" />
+        <state relative-caret-position="338">
+          <caret line="62" column="38" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

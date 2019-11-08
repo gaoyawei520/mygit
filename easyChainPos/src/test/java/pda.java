@@ -27,7 +27,7 @@ import java.util.concurrent.TimeUnit;
 /*
 用到的数据
 账号 17671607980
-条码 40394 40395 6954767423579
+条码 40394  手撕包 40395 凤爪 6954767423579 可乐
 
 
 */
@@ -159,7 +159,7 @@ public class pda {
         keyEvent.withKey(AndroidKey.ENTER);//模拟enter键
         driver.pressKey(keyEvent);
         Thread.sleep(3000);
-        //driver.findElementByAndroidUIAutomator("text(\"已作废\")").click();
+        driver.findElementByAndroidUIAutomator("text(\"已作废\")").click();
         driver.findElementByAndroidUIAutomator("text(\"已作废\")").click();
         Thread.sleep(3000);
         driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//详情
@@ -323,17 +323,100 @@ public class pda {
         driver.findElementByAndroidUIAutomator("text(\"供应商直配\")");
     }
 
-    //@Test(priority = 8)//供应商直配_退货1  订单详情中退货
+
+    @Test(priority = 8)//供应商直配_退货1  订单详情中退货 ,第一次退掉全部商品,第二次就无法继续退货,然后完成退货,
     public void tuihuo1() throws InterruptedException {
-        driver.findElementByAndroidUIAutomator("text(\"确认入库\")").click();
-
+        driver.findElementByAndroidUIAutomator("text(\"已入库\")").click();
+        Thread.sleep(3000);
+        driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//详情
+        driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();
+        Thread.sleep(3000);
+        String num0=driver.findElementByXPath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.widget.ScrollView[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.TextView[1]").getText();
+        String num=num0.substring(5);//截取订单号,把前5位汉字去掉
+        driver.findElementByAndroidUIAutomator("text(\"退货\")").click();
+        Thread.sleep(500);
+        driver.findElementByAndroidUIAutomator("text(\"提交\")").click();//数据不全无法提交
+        Thread.sleep(500);
+        driver.findElementByAndroidUIAutomator("text(\"全选\")").click();
+        driver.findElementByXPath("//android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[3]/android.view.ViewGroup[4]/android.widget.ImageView[1]").click();//点击第一个+
+        driver.findElementByXPath("//android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[3]/android.view.ViewGroup[4]/android.widget.ImageView[1]").click();//点击第一个+
+        driver.findElementByXPath("//android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[3]/android.view.ViewGroup[4]/android.widget.ImageView[1]").click();//点击第一个+
+        driver.findElementByXPath("//android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.view.ViewGroup[3]/android.view.ViewGroup[4]/android.widget.ImageView[1]").click();//点击第二个+
+        driver.findElementByXPath("//android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.view.ViewGroup[3]/android.widget.EditText[1]").click();//第二个输入框
+        driver.findElementByXPath("//android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.view.ViewGroup[3]/android.widget.EditText[1]").clear();
+        driver.findElementByXPath("//android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.view.ViewGroup[3]/android.widget.EditText[1]").sendKeys("9");
+        driver.findElementByAndroidUIAutomator("text(\"提交\")").click();//未选择退回原因无法提交
+        Thread.sleep(500);
+        driver.findElementByAndroidUIAutomator("text(\"请选择\")").click();
+        Thread.sleep(500);
+        driver.findElementByClassName("android.widget.EditText").click();
+        driver.findElementByClassName("android.widget.EditText").sendKeys("丑拒+1");
+        driver.findElementByAndroidUIAutomator("text(\"确定\")").click();
+        Thread.sleep(500);
+        driver.findElementByAndroidUIAutomator("text(\"提交\")").click();
+        driver.findElementByAndroidUIAutomator("text(\"确定\")").click();
+        Thread.sleep(3000);//保存成功 自动返回列表
+        //第二次退货
+        driver.findElementByClassName("android.widget.EditText").clear();
+        driver.findElementByClassName("android.widget.EditText").sendKeys(num);//搜索前面的订单
+        KeyEvent keyEvent = new KeyEvent();
+        keyEvent.withKey(AndroidKey.ENTER);//模拟enter键
+        Thread.sleep(3000);
+        driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//详情
+        driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//详情
+        Thread.sleep(3000);
+        driver.findElementByAndroidUIAutomator("text(\"退货\")").click();
+        Thread.sleep(500);
+        driver.findElementByAndroidUIAutomator("text(\"请选择\")").click();
+        Thread.sleep(500);
+        driver.findElementByAndroidUIAutomator("text(\"质量问题\")").click();
+        driver.findElementByAndroidUIAutomator("text(\"确定\")").click();
+        Thread.sleep(500);
+        driver.findElementByAndroidUIAutomator("text(\"全选\")").click();
+        driver.findElementByAndroidUIAutomator("text(\"提交\")").click();//未填写数据无法提交
+        Thread.sleep(1000);
+        driver.findElementByAndroidUIAutomator("text(\"该商品暂无可退数量\")");
+        driver.findElementByAccessibilityId("TopTitle_backButton").click();//返回
+        Thread.sleep(500);
+        driver.findElementByAccessibilityId("TopTitle_backButton").click();//返回
+        driver.findElementByAndroidUIAutomator("text(\"供应商直配\")");
+        //完成退货
+        driver.findElementByAndroidUIAutomator("text(\"已提交\")").click();
+        Thread.sleep(3000);
+        driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//详情
+        driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//详情
+        Thread.sleep(3000);
+        driver.findElementByAndroidUIAutomator("text(\""+num+"\")");//校验这个是刚才建的退货单
+        driver.findElementByAndroidUIAutomator("text(\"撤回\")").click();
+        Thread.sleep(3000);
+        driver.findElementByAndroidUIAutomator("text(\"提交\")").click();
+        Thread.sleep(3000);
+        driver.findElementByAndroidUIAutomator("text(\"确认已退货\")").click();
+        Thread.sleep(3000);
+        driver.findElementByAccessibilityId("TopTitle_backButton").click();//返回
+        Thread.sleep(3000);
+        driver.findElementByAccessibilityId("TopTitle_backButton").click();//返回
+        driver.findElementByAndroidUIAutomator("text(\"供应商直配\")");
+        Reporter.log("退货1");
     }
 
-    //@Test(priority = 9)//供应商直配_退货1  订单详情中退货
+
+    //@Test(priority = 9)//供应商直配_退货2  按商品退货 并完成
     public void tuihuo2() throws InterruptedException {
+        driver.findElementByAndroidUIAutomator("text(\"按商品退货\")").click();
+		//你大爷的,很好很棒
 
 
     }
+
+
+
+    //@Test(priority = 10)//供应商直配_退货2  按订单退货
+    public void tuihuo3() throws InterruptedException {
+
+
+    }
+
 
     
 
