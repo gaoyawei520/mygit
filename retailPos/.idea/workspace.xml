@@ -4,7 +4,10 @@
     <list default="true" id="022050d4-b09b-4aad-bc71-c1418795df1a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Boss/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Boss/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hello/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Hello/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hello/out/production/Hello/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Hello/out/production/Hello/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hello/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Hello/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../easyChainPos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../easyChainPos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../easyChainPos/src/test/java/pda.java" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/src/test/java/pda.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../easyChainPos/src/test/java/pos.java" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/src/test/java/pos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../easyChainPos/target/test-classes/pda.class" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/target/test-classes/pda.class" afterDir="false" />
@@ -102,7 +105,7 @@
         <counts>
           <entry key="project.closed" value="19" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="5" />
+          <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.19" value="1" />
@@ -121,7 +124,7 @@
           <entry key="project.open.time.7" value="6" />
           <entry key="project.open.time.8" value="5" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="59" />
+          <entry key="project.opened" value="60" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -211,8 +214,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/RunTestCase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="776">
-              <caret line="349" column="24" selection-start-line="349" selection-start-column="24" selection-end-line="349" selection-end-column="24" />
+            <state relative-caret-position="415">
+              <caret line="542" column="41" lean-forward="true" selection-start-line="542" selection-start-column="41" selection-end-line="542" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -305,7 +308,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="257" />
     <option name="y" value="160" />
     <option name="width" value="1400" />
@@ -317,7 +320,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -365,15 +367,16 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573043659963" />
-    <property name="last_opened_file_path" value="E:/易酒批零小程序/retail-weixin-miniprogram" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574071871434" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -531,19 +534,11 @@
       <workItem from="1573009312252" duration="2531000" />
       <workItem from="1573096076264" duration="596000" />
       <workItem from="1573204058860" duration="594000" />
+      <workItem from="1574048274677" duration="2692000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RunTestCase - 2019.10.12 at 10h 22m 24s.xml">
-      <configuration name="RunTestCase" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="RunTestCase - 2019.10.12 at 10h 35m 06s.xml">
-      <configuration name="RunTestCase" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="RunTestCase - 2019.10.12 at 10h 46m 27s.xml">
-      <configuration name="RunTestCase" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="RunTestCase - 2019.10.12 at 11h 21m 44s.xml">
       <configuration name="RunTestCase" configurationId="TestNG" />
     </history-entry>
@@ -565,15 +560,24 @@
     <history-entry file="RunTestCase - 2019.11.06 at 17h 08m 56s.xml">
       <configuration name="RunTestCase" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="RunTestCase - 2019.11.18 at 17h 28m 51s.xml">
+      <configuration name="RunTestCase" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="RunTestCase - 2019.11.18 at 17h 42m 26s.xml">
+      <configuration name="RunTestCase" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="RunTestCase - 2019.11.18 at 17h 57m 47s.xml">
+      <configuration name="RunTestCase" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109510000" />
+    <option name="totallyTimeSpent" value="112202000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09115139" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16364606" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -808,8 +812,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/RunTestCase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="776">
-          <caret line="349" column="24" selection-start-line="349" selection-start-column="24" selection-end-line="349" selection-end-column="24" />
+        <state relative-caret-position="415">
+          <caret line="542" column="41" lean-forward="true" selection-start-line="542" selection-start-column="41" selection-end-line="542" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -70,8 +70,12 @@ public class Main {
         String tim="散装商品"+df.format(new Date());
         System.out.println(tim);
 
-
-
+        double q=0.135; double w=1.125600;double t=0.9906;
+        boolean y=q+t==w;
+        System.out.println(y);
+        String s=String.valueOf(t);
+        int i=s.length();
+        System.out.println(i);
         System.out.println("结束");
     }
 

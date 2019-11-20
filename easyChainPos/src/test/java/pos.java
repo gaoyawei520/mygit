@@ -17,6 +17,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.MessageFormat;
 import java.time.Duration;
+import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -26,8 +27,8 @@ import java.util.concurrent.TimeUnit;
 
 /*
   使用到的具体信息
-  登录账号17671607980
-  会员id =169542813580194562 ,大力出奇迹 ,vip会员
+  登录账号17671607980 17671607988
+  会员id = 169542813580194562 ,大力出奇迹 ,vip会员
   会员手机号 18871182396      普通会员
   商品助记码 ssb,手撕包
   商品助记码g ml
@@ -565,7 +566,9 @@ public class pos {
 
     }*/
 
-    @Test(priority = 20)//离线收银 1下载商品然后关闭网络 2重新登录,进入离线收银模式 3离线散客收银 4离线vip会员收银 5开启网络  6重新登录并上传订单
+    @Test(priority = 20)
+    /*离线收银 1下载商品然后关闭网络 2重新登录,进入离线收银模式 3离线散客收银 4离线vip会员收银 5开启网络  6重新登录
+    7校验不同时间段的上传订单功能,自动上传时间  0-7 13-17 23-24,其他时间不自动上传*/
     public void offlineCashier() throws InterruptedException {
 
         //1 下载商品然后关闭网络
@@ -680,7 +683,8 @@ public class pos {
         (new TouchAction(driver)).press(point5).waitAction(waitOptions).moveTo(point6).release().perform();//上拉关闭状态栏
         Thread.sleep(10000);
 
-        // 6重新登录并上传订单
+
+        // 6重新登录
         driver.findElementById(packagename+":id/ll_close").click();//退出收银界面
         Thread.sleep(100);
         driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
@@ -690,10 +694,50 @@ public class pos {
         driver.findElementById(packagename+":id/userPwdET").clear();//密码输入框
         driver.findElementById(packagename+":id/userPwdET").sendKeys("607980");
         driver.findElementById(packagename+":id/loginBtn").click();//登录
-        Thread.sleep(5000);
-        //driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
-        //Thread.sleep(3000);
-        Reporter.log("离线收银");
+        Thread.sleep(3000);
+
+
+        //7校验不同时间段的上传订单功能,自动上传时间  0-7 13-17 23-24,其他时间不自动上传
+        Calendar calendar = Calendar.getInstance();
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);//获取当前时间的小时数
+        if ((hour >= 13 && hour <= 16)||(hour >= 23) || (hour <= 7)) {
+            Thread.sleep(3000);
+            driver.findElementByAndroidUIAutomator("text(\"报表\")").click();
+            Thread.sleep(100);
+            driver.findElementByAndroidUIAutomator("text(\"离线订单\")").click();
+            Thread.sleep(100);
+            driver.findElementByAndroidUIAutomator("text(\"上传订单\")").click();
+            Thread.sleep(500);
+            driver.findElementById(packagename+":id/iv_close").click();//关闭页面
+            Thread.sleep(100);
+        }
+        else {
+            driver.findElementByAndroidUIAutomator("text(\"报表\")").click();
+            Thread.sleep(100);
+            driver.findElementByAndroidUIAutomator("text(\"离线订单\")").click();
+            Thread.sleep(100);
+            driver.findElementByAndroidUIAutomator("text(\"未上传\")");
+            driver.findElementByAndroidUIAutomator("text(\"上传订单\")").click();
+            Thread.sleep(500);
+            driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
+            Thread.sleep(3000);
+            driver.findElementByAndroidUIAutomator("text(\"已上传\")");
+            driver.findElementById(packagename+":id/iv_close").click();//关闭页面
+            Thread.sleep(100);
+            Reporter.log("离线收银");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
 

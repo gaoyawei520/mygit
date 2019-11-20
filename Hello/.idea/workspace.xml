@@ -4,7 +4,10 @@
     <list default="true" id="6e01ac27-49c3-453b-93a9-e02b6e1a72ab" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Boss/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Boss/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Hello/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hello/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../easyChainPos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../easyChainPos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../easyChainPos/src/test/java/pda.java" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/src/test/java/pda.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../easyChainPos/src/test/java/pos.java" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/src/test/java/pos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../easyChainPos/target/test-classes/pda.class" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/target/test-classes/pda.class" afterDir="false" />
@@ -24,11 +27,11 @@
         <counts>
           <entry key="project.closed" value="16" />
           <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.10" value="5" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.24" value="2" />
           <entry key="project.open.time.25" value="3" />
@@ -42,17 +45,17 @@
           <entry key="project.open.time.7" value="6" />
           <entry key="project.open.time.8" value="4" />
           <entry key="project.open.time.9" value="5" />
-          <entry key="project.opened" value="53" />
+          <entry key="project.opened" value="55" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2457" />
+          <entry key="java" value="2614" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2457" />
+          <entry key="JAVA" value="2614" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -74,8 +77,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="77" selection-start-line="77" selection-end-line="77" />
+            <state relative-caret-position="226">
+              <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,7 +115,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="257" />
     <option name="y" value="160" />
     <option name="width" value="1400" />
@@ -124,8 +127,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -158,13 +159,15 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568961139743" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573815880631" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -275,17 +278,19 @@
       <workItem from="1573009312155" duration="593000" />
       <workItem from="1573096076198" duration="597000" />
       <workItem from="1573204058767" duration="593000" />
+      <workItem from="1573786482545" duration="3521000" />
+      <workItem from="1574040721456" duration="599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60120000" />
+    <option name="totallyTimeSpent" value="64240000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="257" y="160" width="1400" height="1000" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.08528785" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08656716" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -294,7 +299,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3286334" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -331,8 +336,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
+        <state relative-caret-position="226">
+          <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
