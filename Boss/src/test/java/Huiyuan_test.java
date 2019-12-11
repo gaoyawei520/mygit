@@ -99,6 +99,7 @@ public class Huiyuan_test extends BaseForShopKeeper {
     @Test(priority = 4)//会员管理____还款  (条件是不要有低于1块钱的赊账,不然可能有问题)
     public void huankuan() throws InterruptedException {
         MainPageForShopKeeper mainPageForShopKeeper = new MainPageForShopKeeper(driver);
+        Thread.sleep(100);
         //首先获取之前的赊账金额
         MobileElement beforeNum= (MobileElement) driver.findElementByXPath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.view.ViewGroup[5]/android.widget.ScrollView[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.TextView[8]");
         String num1=beforeNum.getText();
@@ -147,6 +148,7 @@ public class Huiyuan_test extends BaseForShopKeeper {
     @Test(priority = 5)//会员管理____变更会员类型
     public void biangengleixing() throws InterruptedException {
         MainPageForShopKeeper mainPageForShopKeeper = new MainPageForShopKeeper(driver);
+        Thread.sleep(100);
         mainPageForShopKeeper.getbiangengleixing().click();//变更会员类型
         mainPageForShopKeeper.getpifahuiyuan().click();
         mainPageForShopKeeper.getqueding().click();
@@ -306,9 +308,14 @@ public class Huiyuan_test extends BaseForShopKeeper {
         driver.findElementByAndroidUIAutomator("text(\"最后下单时间：\")").click();//打开会员详情
         Thread.sleep(2500);
         mainPageForShopKeeper.huadong();//上滑,页面向下滑动
+        Thread.sleep(100);
         mainPageForShopKeeper.huadong();//上滑
+        Thread.sleep(100);
         mainPageForShopKeeper.huadong();//上滑
-        driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"赠送红包\"));");//滑动直到找到元素为止,webview为变量
+        Thread.sleep(100);
+        mainPageForShopKeeper.xiahua();//下滑,页面向上
+        Thread.sleep(100);
+        //driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"赠送红包\"));");//滑动直到找到元素为止,webview为变量
         driver.findElementByAndroidUIAutomator("text(\"赠送红包\")").click();
         driver.findElementByClassName("android.widget.EditText").sendKeys("2.5");
         driver.findElementByAndroidUIAutomator("text(\"确定\")").click();

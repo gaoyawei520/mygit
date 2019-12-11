@@ -38,7 +38,7 @@ import java.util.concurrent.TimeUnit;
 
 public class pos {
     public static AndroidDriver driver;
-    public static final String packagename="com.yijiupi.easychain"; //testpre(release)   test   pre  null
+    public static final String packagename="com.yijiupi.easychain"; // testpre (release)   test   pre  null
 
     @BeforeClass
     public static AndroidDriver SetUp() throws MalformedURLException {
@@ -82,6 +82,8 @@ public class pos {
         //driver.closeApp();
     }
 
+    public AndroidElement denglu(){AndroidElement denglu= (AndroidElement) driver.findElementByAndroidUIAutomator("text(\"登录\")");   return  denglu; }
+
 
 
 
@@ -92,7 +94,10 @@ public class pos {
         driver.findElementById(packagename+":id/userNameET").sendKeys("17671607980");
         driver.findElementById(packagename+":id/userPwdET").clear();//密码输入框
         driver.findElementById(packagename+":id/userPwdET").sendKeys("607980");
-        driver.findElementById(packagename+":id/loginBtn").click();//登录
+        denglu().click();
+        //driver.findElementByAndroidUIAutomator("new UiSelector().className(\"android.widget.Button\").textContains(\"登\")").click();
+        //AndroidElement denglu= (AndroidElement) driver.findElementByAndroidUIAutomator("new UiSelector().className(\"android.widget.TextView\").textContains(\"登\")");
+        //driver.findElementById(packagename+":id/loginBtn").click();//登录
         Thread.sleep(3000);
         driver.findElementByAndroidUIAutomator("text(\"退出登录\")");
         Reporter.log("登录成功");
@@ -150,6 +155,7 @@ public class pos {
         driver.findElementByXPath("//android.widget.TextView[@resource-id='"+packagename+":id/tv' and @text='现金']").click();
         driver.findElementByAndroidUIAutomator("text(\"支付\")").click();
         Thread.sleep(2000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         driver.findElementByAndroidUIAutomator("text(\"收款\")");//校验操作成功没
         Reporter.log("散客现金收银");
     }
@@ -170,6 +176,7 @@ public class pos {
         driver.findElementByXPath("//android.widget.TextView[@resource-id='"+packagename+":id/tv' and @text='现金']").click();
         driver.findElementByAndroidUIAutomator("text(\"支付\")").click();
         Thread.sleep(2000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         driver.findElementByAndroidUIAutomator("text(\"收款\")");//校验操作成功没
         Reporter.log("散客购买散称商品");
     }
@@ -190,6 +197,7 @@ public class pos {
         driver.findElementByXPath("//android.widget.TextView[@resource-id='"+packagename+":id/tv' and @text='现金']").click();
         driver.findElementByAndroidUIAutomator("text(\"支付\")").click();
         Thread.sleep(2000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         driver.findElementByAndroidUIAutomator("text(\"收款\")");//校验操作成功没
         Reporter.log("会员现金收银");
     }
@@ -239,6 +247,7 @@ public class pos {
         driver.findElementByXPath("//android.widget.TextView[@resource-id='"+packagename+":id/tv' and @text='现金']").click();
         driver.findElementByAndroidUIAutomator("text(\"支付\")").click();
         Thread.sleep(2000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         driver.findElementByAndroidUIAutomator("text(\"收款\")");//校验操作成功没
         Reporter.log("vip会员现金收银");
     }
@@ -260,10 +269,11 @@ public class pos {
         Thread.sleep(100);
         driver.findElementByAndroidUIAutomator("text(\"收款\")").click();
         Thread.sleep(500);
-        driver.findElementByXPath("//android.widget.RelativeLayout[@resource-id='"+packagename+":id/rl_yue']/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]").click();//余额支付
+        driver.findElementById(packagename+":id/rl_yue").click();//余额支付
         driver.findElementById(packagename+":id/et_pay_psd").sendKeys("341234");
         driver.findElementByAndroidUIAutomator("text(\"支付\")").click();
         Thread.sleep(2000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         driver.findElementByAndroidUIAutomator("text(\"收款\")");//校验操作成功没
         Reporter.log("vip会员余额付款");
     }
@@ -294,13 +304,14 @@ public class pos {
         Reporter.log("挂单");
     }
 
-    @Test(priority = 11)//解单
+    @Test(priority = 11)//解单并现金付款
     public void jiedan() throws InterruptedException {
         driver.findElementByAndroidUIAutomator("text(\"解单(F2)\")").click();//解单
         driver.findElementByAndroidUIAutomator("text(\"收款\")").click();
         driver.findElementByXPath("//android.widget.TextView[@resource-id='"+packagename+":id/tv' and @text='现金']").click();
         driver.findElementByAndroidUIAutomator("text(\"支付\")").click();
         Thread.sleep(2000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         driver.findElementByAndroidUIAutomator("text(\"收款\")");//校验操作成功没
         Reporter.log("解单");
     }
@@ -628,8 +639,9 @@ public class pos {
         Thread.sleep(2000);
         xuanze.get(2).click();
         driver.findElementByAndroidUIAutomator("text(\"收款\")").click();
-        driver.findElementByAndroidUIAutomator("text(\"支付\")").click();
+        driver.findElementByAndroidUIAutomator("text(\"支付\")").click();//一次收银`
         Thread.sleep(3000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         driver.findElementByAndroidUIAutomator("text(\"收款\")");
 
         driver.findElementById(packagename+":id/ed_ipnut").sendKeys("ml");//搜索商品,搜索条件ml
@@ -638,8 +650,9 @@ public class pos {
         List<AndroidElement> xuanze1= driver.findElementsByAndroidUIAutomator("text(\"选择\")");
         xuanze1.get(0).click();
         driver.findElementByAndroidUIAutomator("text(\"收款\")").click();
-        driver.findElementByAndroidUIAutomator("text(\"支付\")").click();
+        driver.findElementByAndroidUIAutomator("text(\"支付\")").click();//二次收银
         Thread.sleep(3000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         driver.findElementByAndroidUIAutomator("text(\"收款\")");
 
         //4 离线vip会员收银
@@ -666,6 +679,7 @@ public class pos {
         driver.findElementByAndroidUIAutomator("text(\"收款\")").click();
         driver.findElementByAndroidUIAutomator("text(\"支付\")").click();
         Thread.sleep(3000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         driver.findElementByAndroidUIAutomator("text(\"收款\")");
 
 

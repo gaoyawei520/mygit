@@ -2,6 +2,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
@@ -56,6 +57,11 @@ public class RunTestCase extends Base {
 //    public void login() throws IOException, SQLException {
 //        StartApp.login(driver);
 //    }
+//    public AndroidElement queren(){AndroidElement queren= (AndroidElement) driver.findElementByAndroidUIAutomator("text(\"确认\")");   return  queren; }
+    @AndroidFindBy(uiAutomator = "text(\"登录\")")  AndroidElement denglu;
+//    @AndroidFindBy(uiAutomator = "text(\"交接\")")  AndroidElement handOversButton;
+//    public AndroidElement handOversButton(){ return handOversButton; }
+
     @Test(priority = 1)//登录
     public void login() throws InterruptedException {
         Thread.sleep(3000);
@@ -65,6 +71,7 @@ public class RunTestCase extends Base {
         driver.findElementById(Environment.PackageName +":id/userPwdET").sendKeys("886667");
         driver.findElementById(Environment.PackageName +":id/loginBtn").click();
         Thread.sleep(4000);
+        //denglu.click();
     }
 
 
@@ -101,17 +108,17 @@ public class RunTestCase extends Base {
         StartApp.vipMemberCreditSale(driver);
     }
 
-    @Test(priority = 4)
+    @Test(priority = 4)//vip会员现金支付
     public void vipMemberCashSale() throws InterruptedException {
         StartApp.vipMemberCashSale(driver);
     }
 
-    @Test(priority = 5)
+    @Test(priority = 5)//vip会员储蓄卡支付
     public void vipMemberDebitCardSale() throws InterruptedException {
         StartApp.vipMemberDebitCardSale(driver);
     }
 
-    @Test(priority = 6)
+    @Test(priority = 6)//vip会员信用卡支付
     public void vipMemberCreditCardSale() throws InterruptedException {
         StartApp.vipMemberCreditCardSale(driver);
     }
@@ -119,7 +126,7 @@ public class RunTestCase extends Base {
 
     @Test(priority = 7)//普通会员赊账支付
     public void regularMemberCreditSale() throws InterruptedException {
-        StartApp.switchToOldCashier(driver);
+        //StartApp.switchToOldCashier(driver);
         StartApp.regularMemberCreditSale(driver);
     }
 
@@ -184,12 +191,12 @@ public class RunTestCase extends Base {
         StartApp.wholeSaleMemberCashSale(driver);
     }
 
-    @Test(priority = 20)//批发会员现金支付
+    @Test(priority = 20)//批发会员储蓄卡支付
     public void wholeSaleMemberDebitCardSale() throws InterruptedException {
         StartApp.wholeSaleMemberDebitCardSale(driver);
     }
 
-    @Test(priority = 21)//批发会员现金支付
+    @Test(priority = 21)//批发会员信用卡支付
     public void wholeSaleMemberCreditCardSale() throws InterruptedException {
         StartApp.wholeSaleMemberCreditCardSale(driver);
     }
@@ -215,12 +222,12 @@ public class RunTestCase extends Base {
     }
 
     @Test(priority = 26)//散客散货现金支付
-    public void bulkGoodsCashSale(){
+    public void bulkGoodsCashSale() throws InterruptedException {
         StartApp.bulkGoodsCashSale(driver);
     }
 
     @Test(priority = 27)//散客散货储蓄卡支付
-    public void bulkGoodsDebitCardSale(){
+    public void bulkGoodsDebitCardSale() throws InterruptedException {
         StartApp.bulkGoodsDebitCardSale(driver);
     }
 
@@ -391,15 +398,20 @@ public class RunTestCase extends Base {
         productPage.getSettingButtonForMemberPrice().click();
         productPage.getMemberPriceInputBox().sendKeys(Environment.MemberPrice);
         productPage.getConfirm().click();
-        productPage.getSelectAll().click();
+        Thread.sleep(2000);
+        //productPage.getSelectAll().click();
+        driver.findElementByAndroidUIAutomator("text(\"全选\")").click();
         productPage.getSetUpAllMemberPrice().click();
         productPage.getSetUpMemberPriceInputBox().sendKeys(Environment.MemberPrice);
         productPage.getConfirm().click();
-        productPage.getSelectAll().click();
+        Thread.sleep(2000);
+        //productPage.getSelectAll().click();
+        driver.findElementByAndroidUIAutomator("text(\"全选\")").click();
         productPage.getSetUpAllMemberPrice().click();
         productPage.getClearMemberPrice().click();
-        Thread.sleep(1000);
+        Thread.sleep(500);
         productPage.getDetermine().click();
+        Thread.sleep(1000);
         productPage.getBackButton().click();
     }
 

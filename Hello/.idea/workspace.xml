@@ -3,16 +3,27 @@
   <component name="ChangeListManager">
     <list default="true" id="6e01ac27-49c3-453b-93a9-e02b6e1a72ab" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Boss/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Boss/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Boss/src/main/java/MainPageForShopKeeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Boss/src/main/java/MainPageForShopKeeper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Boss/src/test/java/Huiyuan_test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Boss/src/test/java/Huiyuan_test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Boss/src/test/java/shangpincase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Boss/src/test/java/shangpincase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Boss/target/classes/MainPageForShopKeeper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Boss/target/classes/MainPageForShopKeeper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Boss/target/test-classes/Huiyuan_test.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Boss/target/test-classes/Huiyuan_test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Boss/target/test-classes/shangpincase.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Boss/target/test-classes/shangpincase.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Hello/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Hello/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../easyChainPos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../easyChainPos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../easyChainPos/src/test/java/pda.java" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/src/test/java/pda.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../easyChainPos/src/test/java/pos.java" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/src/test/java/pos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../easyChainPos/target/test-classes/pda.class" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/target/test-classes/pda.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../easyChainPos/target/test-classes/pos.class" beforeDir="false" afterPath="$PROJECT_DIR$/../easyChainPos/target/test-classes/pos.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../retailPos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../retailPos/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../retailPos/src/main/java/CashierPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../retailPos/src/main/java/CashierPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../retailPos/src/main/java/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../retailPos/src/main/java/ProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../retailPos/src/main/java/StartApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../retailPos/src/main/java/StartApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../retailPos/src/test/java/RunTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../retailPos/src/test/java/RunTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../retailPos/target/classes/CashierPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../retailPos/target/classes/CashierPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../retailPos/target/classes/ProductPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../retailPos/target/classes/ProductPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../retailPos/target/classes/StartApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/../retailPos/target/classes/StartApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../retailPos/target/test-classes/RunTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/../retailPos/target/test-classes/RunTestCase.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,10 +39,10 @@
           <entry key="project.closed" value="16" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="3" />
-          <entry key="project.open.time.10" value="5" />
+          <entry key="project.open.time.10" value="6" />
           <entry key="project.open.time.11" value="3" />
-          <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.14" value="2" />
+          <entry key="project.open.time.12" value="3" />
+          <entry key="project.open.time.14" value="5" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.24" value="2" />
           <entry key="project.open.time.25" value="3" />
@@ -44,8 +55,8 @@
           <entry key="project.open.time.6" value="4" />
           <entry key="project.open.time.7" value="6" />
           <entry key="project.open.time.8" value="4" />
-          <entry key="project.open.time.9" value="5" />
-          <entry key="project.opened" value="55" />
+          <entry key="project.open.time.9" value="9" />
+          <entry key="project.opened" value="65" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -127,6 +138,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -159,9 +171,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -280,17 +291,27 @@
       <workItem from="1573204058767" duration="593000" />
       <workItem from="1573786482545" duration="3521000" />
       <workItem from="1574040721456" duration="599000" />
+      <workItem from="1574303004684" duration="598000" />
+      <workItem from="1574386468496" duration="599000" />
+      <workItem from="1574761621042" duration="596000" />
+      <workItem from="1574843604374" duration="597000" />
+      <workItem from="1574938605352" duration="599000" />
+      <workItem from="1574993259892" duration="598000" />
+      <workItem from="1575266117021" duration="598000" />
+      <workItem from="1575359057391" duration="597000" />
+      <workItem from="1575599348272" duration="594000" />
+      <workItem from="1576030186740" duration="595000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64240000" />
+    <option name="totallyTimeSpent" value="70211000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="257" y="160" width="1400" height="1000" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08656716" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.06865671" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />

@@ -203,6 +203,7 @@ public class CashierPage {
     @AndroidFindBy(uiAutomator = "text(\"整单全选\")")
     AndroidElement chooseAllItem;
 
+    //打印小票按钮
     @AndroidFindBy(id = Environment.PackageName+":id/printReceiptSwitchBtn")
     AndroidElement printReceipt;
 

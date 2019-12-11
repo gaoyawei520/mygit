@@ -134,6 +134,7 @@ public class shangpincase extends BaseForShopKeeper{
         shurukuang1.get(0).sendKeys("18");
         Thread.sleep(100L);
         shopPageForShopKeeper.getqueding().click();
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
       //shopPageForShopKeeper.getqueding().click();
         Thread.sleep(2000L);
         driver.findElementByAndroidUIAutomator("text(\"￥18.00\")");
@@ -141,6 +142,7 @@ public class shangpincase extends BaseForShopKeeper{
         List<AndroidElement> shurukuang2 = driver.findElementsByClassName("android.widget.EditText");
         shurukuang2.get(0).sendKeys("1");
         shopPageForShopKeeper.getqueding().click();
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         //shopPageForShopKeeper.getqueding().click();
         Thread.sleep(2000L);
         driver.findElementByAndroidUIAutomator("text(\"¥17.00\")");
@@ -148,6 +150,7 @@ public class shangpincase extends BaseForShopKeeper{
         List<AndroidElement> shurukuang3 = driver.findElementsByClassName("android.widget.EditText");
         shurukuang3.get(0).sendKeys("2");
         shopPageForShopKeeper.getqueding().click();
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         //shopPageForShopKeeper.getqueding().click();
         Thread.sleep(2000L);
         driver.findElementByAndroidUIAutomator("text(\" ￥16.00\")");

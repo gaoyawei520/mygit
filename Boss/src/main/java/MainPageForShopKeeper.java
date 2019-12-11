@@ -956,7 +956,7 @@ public class MainPageForShopKeeper {
        int height=driver.manage().window().getSize().height;
 
        int y1 = height*1/2; //下滑的开始点，从y1开始也就是屏幕的二分之一处
-       int y2 = height*6/7; //下滑的结束点，到y2结束也就是屏幕的七分之六处
+       int y2 = height*2/3; //下滑的结束点，到y2结束也就是屏幕的三分之二处
        TouchAction tAction = new TouchAction(driver);
        PointOption point1 = PointOption.point(width / 2, y1);//上滑的开始点
        PointOption point2 = PointOption.point(width / 2, y2);//上滑的结束点

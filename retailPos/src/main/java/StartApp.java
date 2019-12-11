@@ -72,6 +72,7 @@ public class StartApp extends Base {
         cashierPage.confirmButton().click();
     }
 
+    //清除商品
     public static void clearProduct(AndroidDriver driver) throws InterruptedException {
         Thread.sleep(1);
         CashierPage cashierPage = new CashierPage(driver);
@@ -142,7 +143,7 @@ public class StartApp extends Base {
 //        cashierPage.totalPayButton().click();
     }
 
-    //普通会员信用卡买单非统一销售商品
+    //普通会员赊账支付
     public static void regularMemberCreditSale(AndroidDriver driver) throws InterruptedException {
         CashierPage cashierPage = new CashierPage(driver);
         addRegularMemberNumber(driver);
@@ -150,8 +151,11 @@ public class StartApp extends Base {
         WebElement search = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.id(Environment.PackageName + ":id/btn_search")));
         search.click();
-        cashierPage.creditSaleButton().click();
-        cashierPage.creditSaleSureButton().click();
+        cashierPage.getNewCashier().click();    //收款
+        cashierPage.creditSaleButton().click(); //赊账
+        cashierPage.totalPayButton().click(); //支付
+        Thread.sleep(1000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
     }
 
     public static void vipMemberCreditSale(AndroidDriver driver) throws InterruptedException {
@@ -165,8 +169,11 @@ public class StartApp extends Base {
         cashierPage.getNewCashier().click();
         cashierPage.creditSaleButton().click();
         cashierPage.totalPayButton().click();
+        Thread.sleep(1000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
     }
 
+    //批发会员赊账支付
     public static void wholeSaleMemberCreditSale(AndroidDriver driver) throws InterruptedException {
         Thread.sleep(2);
         CashierPage cashierPage = new CashierPage(driver);
@@ -175,10 +182,14 @@ public class StartApp extends Base {
         WebElement search = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.id(Environment.PackageName + ":id/btn_search")));
         search.click();
-        cashierPage.creditSaleButton().click();
-        cashierPage.creditSaleSureButton().click();
+        cashierPage.getNewCashier().click();  //收款
+        cashierPage.creditSaleButton().click(); //赊账
+        cashierPage.totalPayButton().click(); //支付
+        Thread.sleep(1000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
     }
 
+    //VIP会员现金支付
     public static void vipMemberCashSale(AndroidDriver driver) throws InterruptedException {
         CashierPage cashierPage = new CashierPage(driver);
         addVipMember(driver);
@@ -189,115 +200,175 @@ public class StartApp extends Base {
         Thread.sleep(1000);
         //cashierPage.cashSaleButton().click();
         cashierPage.totalPayButton().click();
+        Thread.sleep(1000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
     }
 
+    //普通会员现金支付
     public static void regularMemberCashSale(AndroidDriver driver) throws InterruptedException {
         CashierPage cashierPage = new CashierPage(driver);
         addRegularMemberNumber(driver);
         cashierPage.scanCodeBar().sendKeys(cashierPage.NonUNIFORMPRODUCT);
         cashierPage.search().click();
-        WebElement CashButton = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.presenceOfElementLocated(By.id(Environment.PackageName + ":id/xianjinLL")));
-        CashButton.click();
-        cashierPage.cashSaleButton().click();
+//        WebElement CashButton = (new WebDriverWait(driver, 20))
+//                .until(ExpectedConditions.presenceOfElementLocated(By.id(Environment.PackageName + ":id/xianjinLL")));
+//        CashButton.click();
+        Thread.sleep(1000);
+        cashierPage.getNewCashier().click();  //收款
+        cashierPage.cashSaleButton().click();  //现金
         cashierPage.getPrintReceipt().click();//取消打印小票
-        cashierPage.totalPayButton().click();
+        cashierPage.totalPayButton().click();  //支付
+        Thread.sleep(1000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
     }
 
+    //批发会员现金支付
     public static void wholeSaleMemberCashSale(AndroidDriver driver) throws InterruptedException {
         CashierPage cashierPage = new CashierPage(driver);
         addWholeSaleMemberNumber(driver);
         cashierPage.scanCodeBar().sendKeys(cashierPage.UNIFORMPRODUCT);
         cashierPage.search().click();
-        WebElement CashButton = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.presenceOfElementLocated(By.id(Environment.PackageName + ":id/xianjinLL")));
-        CashButton.click();
+//        WebElement CashButton = (new WebDriverWait(driver, 20))
+//                .until(ExpectedConditions.presenceOfElementLocated(By.id(Environment.PackageName + ":id/xianjinLL")));
+//        CashButton.click();
+        Thread.sleep(1000);
+        cashierPage.getNewCashier().click();  //收款
         cashierPage.cashSaleButton().click();
         cashierPage.totalPayButton().click();
+        Thread.sleep(1000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
     }
 
+    //vip会员储蓄卡支付
     public static void vipMemberDebitCardSale(AndroidDriver driver) throws InterruptedException {
         CashierPage cashierPage = new CashierPage(driver);
         addVipMember(driver);
         cashierPage.scanCodeBar().sendKeys(cashierPage.NonUNIFORMPRODUCT);
         cashierPage.search().click();
         cashierPage.getNewCashier().click();
-        cashierPage.debitCardButton().click();
+        cashierPage.debitCardButton().click();//储蓄卡
         cashierPage.totalPayButton().click();
+        Thread.sleep(1000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
     }
 
+    //普通会员储蓄卡支付
     public static void regularMemberDebitCardSale(AndroidDriver driver) throws InterruptedException {
         CashierPage cashierPage = new CashierPage(driver);
         addRegularMemberNumber(driver);
         cashierPage.scanCodeBar().sendKeys(cashierPage.NonUNIFORMPRODUCT);
         cashierPage.search().click();
-        WebElement CashButton = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.presenceOfElementLocated(By.id(Environment.PackageName + ":id/xianjinLL")));
-        CashButton.click();
-        cashierPage.cashSaleButton().click();
-        cashierPage.debitCardButton().click();
-        cashierPage.totalPayButton().click();
+//        WebElement CashButton = (new WebDriverWait(driver, 20))
+//                .until(ExpectedConditions.presenceOfElementLocated(By.id(Environment.PackageName + ":id/xianjinLL")));
+//        CashButton.click();
+        Thread.sleep(1000);
+        cashierPage.getNewCashier().click();  //收款
+        cashierPage.debitCardButton().click();  //储蓄卡
+        cashierPage.totalPayButton().click();  //支付
+        Thread.sleep(1000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
     }
 
+    //批发会员储蓄卡支付
     public static void wholeSaleMemberDebitCardSale(AndroidDriver driver) throws InterruptedException {
         CashierPage cashierPage = new CashierPage(driver);
         addWholeSaleMemberNumber(driver);
         cashierPage.scanCodeBar().sendKeys(cashierPage.UNIFORMPRODUCT);
         cashierPage.search().click();
-        WebElement CashButton = (new WebDriverWait(driver, 20))
-                .until(ExpectedConditions.presenceOfElementLocated(By.id(Environment.PackageName + ":id/xianjinLL")));
-        CashButton.click();
-        //cashierPage.cashSaleButton().click();
-        cashierPage.debitCardButton().click();
+//        WebElement CashButton = (new WebDriverWait(driver, 20))
+//                .until(ExpectedConditions.presenceOfElementLocated(By.id(Environment.PackageName + ":id/xianjinLL")));
+//        CashButton.click();
+        //cashierPage.cashSaleButton().click();\
+        cashierPage.getNewCashier().click();  //收款
+        cashierPage.debitCardButton().click(); //储蓄卡
         cashierPage.totalPayButton().click();
+        Thread.sleep(1000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
     }
 
+    //vip会员信用卡支付
     public static void vipMemberCreditCardSale(AndroidDriver driver) throws InterruptedException {
         CashierPage cashierPage = new CashierPage(driver);
         addVipMember(driver);
         cashierPage.scanCodeBar().sendKeys(cashierPage.NonUNIFORMPRODUCT);
         cashierPage.search().click();
+        Thread.sleep(1000);
         cashierPage.getNewCashier().click();
-        cashierPage.creditCardButton().click();
+        cashierPage.creditCardButton().click();//信用卡
         cashierPage.confirmButton().click();
-        cashierPage.getPrintReceipt().click();
+        cashierPage.getPrintReceipt().click();//勾选打印小票
         cashierPage.totalPayButton().click();
+        Thread.sleep(1000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
     }
 
+    //普通会员信用卡支付
     public static void regularMemberCreditCardSale(AndroidDriver driver) throws InterruptedException {
         CashierPage cashierPage = new CashierPage(driver);
         addRegularMemberNumber(driver);
         cashierPage.scanCodeBar().sendKeys(cashierPage.NonUNIFORMPRODUCT);
         cashierPage.search().click();
-        cashierPage.cashSaleButton().click();
-        cashierPage.creditCardButton().click();
+        Thread.sleep(1000);
+        //cashierPage.cashSaleButton().click();
+        cashierPage.getNewCashier().click();  //收款
+        cashierPage.creditCardButton().click();//信用卡
         cashierPage.confirmButton().click();
         cashierPage.totalPayButton().click();
+        Thread.sleep(1000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
     }
 
+    //批发会员信用卡支付
     public static void wholeSaleMemberCreditCardSale(AndroidDriver driver) throws InterruptedException {
         CashierPage cashierPage = new CashierPage(driver);
         addWholeSaleMemberNumber(driver);
         cashierPage.scanCodeBar().sendKeys(cashierPage.UNIFORMPRODUCT);
         cashierPage.search().click();
-        cashierPage.cashSaleButton().click();
-        cashierPage.creditCardButton().click();
+        Thread.sleep(1000);
+        //cashierPage.cashSaleButton().click();
+        cashierPage.getNewCashier().click();  //收款
+        cashierPage.creditCardButton().click();  //信用卡
         cashierPage.confirmButton().click();
         cashierPage.totalPayButton().click();
+        Thread.sleep(1000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
     }
 
-    public static void walkingMemberCreditSale(AndroidDriver driver) {
+    //散客赊账支付，支付应该不成功
+    public static void walkingMemberCreditSale(AndroidDriver driver) throws InterruptedException {
         CashierPage cashierPage = new CashierPage(driver);
-        cashierPage.pressWalkingMemberButton(driver);
+        cashierPage.pressWalkingMemberButton(driver);  //切换会员为散客
+        cashierPage.noCodeProductButton().click(); //无条码商品
+        for (int i = 0; i < 3; i++) {
+            cashierPage.noCodeProductAddButton().click(); //增加数量
+        }
+        cashierPage.returnCashierDesktopButton().click(); //返回收银台
+        cashierPage.getNewCashier().click();  //收款
+        cashierPage.creditSaleButton().click(); //赊账
+        Thread.sleep(500);
+        driver.findElementById(Environment.PackageName+":id/iv_close").click();//关闭支付面板
+    }
+
+    //散客现金支付
+    public static void walkingMemberCashSale(AndroidDriver driver) throws InterruptedException {
+        CashierPage cashierPage = new CashierPage(driver);
+        cashierPage.pressWalkingMemberButton(driver); //切换会员为散客
         cashierPage.noCodeProductButton().click();
         for (int i = 0; i < 3; i++) {
             cashierPage.noCodeProductAddButton().click();
         }
         cashierPage.returnCashierDesktopButton().click();
-        cashierPage.creditSaleButton().click();
+//        WebElement CashButton = (new WebDriverWait(driver, 20))
+//                .until(ExpectedConditions.presenceOfElementLocated(By.id("com.yijiupi.retail:id/xianjinLL")));
+//        CashButton.click();
+        cashierPage.getNewCashier().click();  //收款
+        cashierPage.totalPayButton().click();
+        Thread.sleep(1000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
     }
 
-    public static void walkingMemberCashSale(AndroidDriver driver) {
+    //散客会员储蓄卡支付
+    public static void walkingMemberDebitCardSale(AndroidDriver driver) throws InterruptedException {
         CashierPage cashierPage = new CashierPage(driver);
         cashierPage.pressWalkingMemberButton(driver);
         cashierPage.noCodeProductButton().click();
@@ -308,26 +379,14 @@ public class StartApp extends Base {
 //        WebElement CashButton = (new WebDriverWait(driver, 20))
 //                .until(ExpectedConditions.presenceOfElementLocated(By.id("com.yijiupi.retail:id/xianjinLL")));
 //        CashButton.click();
-        cashierPage.cashSaleButton().click();
+        cashierPage.getNewCashier().click();  //收款
+        cashierPage.debitCardButton().click();//储蓄卡
         cashierPage.totalPayButton().click();
+        Thread.sleep(1000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
     }
 
-    public static void walkingMemberDebitCardSale(AndroidDriver driver) {
-        CashierPage cashierPage = new CashierPage(driver);
-        cashierPage.pressWalkingMemberButton(driver);
-        cashierPage.noCodeProductButton().click();
-        for (int i = 0; i < 3; i++) {
-            cashierPage.noCodeProductAddButton().click();
-        }
-        cashierPage.returnCashierDesktopButton().click();
-//        WebElement CashButton = (new WebDriverWait(driver, 20))
-//                .until(ExpectedConditions.presenceOfElementLocated(By.id("com.yijiupi.retail:id/xianjinLL")));
-//        CashButton.click();
-        cashierPage.cashSaleButton().click();
-        cashierPage.debitCardButton().click();
-        cashierPage.totalPayButton().click();
-    }
-
+    //散客会员信用卡支付
     public static void walkingMemberCreditCardSale(AndroidDriver driver) throws InterruptedException {
         CashierPage cashierPage = new CashierPage(driver);
         cashierPage.pressWalkingMemberButton(driver);
@@ -336,14 +395,16 @@ public class StartApp extends Base {
             cashierPage.noCodeProductAddButton().click();
         }
         cashierPage.returnCashierDesktopButton().click();
-        cashierPage.cashSaleButton().click();
-        cashierPage.creditCardButton().click();
+        cashierPage.getNewCashier().click();  //收款
+        cashierPage.creditCardButton().click();//信用卡
         cashierPage.confirmButton().click();
         cashierPage.totalPayButton().click();
+        Thread.sleep(1000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
     }
 
     //带分的散装商品现金支付
-    public static void bulkGoodsCashSale(AndroidDriver driver) {
+    public static void bulkGoodsCashSale(AndroidDriver driver) throws InterruptedException {
         CashierPage cashierPage = new CashierPage(driver);
         cashierPage.pressWalkingMemberButton(driver);
         cashierPage.scanCodeBar().sendKeys(cashierPage.BULKGOODSWITHCENTS);
@@ -354,29 +415,34 @@ public class StartApp extends Base {
 //        WebElement CashButton = (new WebDriverWait(driver, 20))
 //                .until(ExpectedConditions.presenceOfElementLocated(By.id("com.yijiupi.retail:id/xianjinLL")));
 //        CashButton.click();
-        cashierPage.cashSaleButton().click();
+        cashierPage.getNewCashier().click();  //收款
+        cashierPage.cashSaleButton().click(); //现金
         cashierPage.totalPayButton().click();
+        Thread.sleep(1000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
     }
 
     //带分的散装商品储蓄卡支付
-    public static void bulkGoodsDebitCardSale(AndroidDriver driver) {
+    public static void bulkGoodsDebitCardSale(AndroidDriver driver) throws InterruptedException {
         CashierPage cashierPage = new CashierPage(driver);
         cashierPage.pressWalkingMemberButton(driver);
         cashierPage.scanCodeBar().sendKeys(cashierPage.BULKGOODSWITHCENTS);
         cashierPage.search().click();
         for (int i = 0; i < 1; i++) {
-            cashierPage.noCodeProductAddButton.click();
+            cashierPage.noCodeProductAddButton.click(); //增加数量+
         }
 //        WebElement CashButton = (new WebDriverWait(driver, 20))
 //                .until(ExpectedConditions.presenceOfElementLocated(By.id("com.yijiupi.retail:id/xianjinLL")));
 //        CashButton.click();
-        cashierPage.cashSaleButton().click();
-        cashierPage.debitCardButton().click();
+        cashierPage.getNewCashier().click();  //收款
+        cashierPage.debitCardButton().click(); //储蓄卡
         cashierPage.totalPayButton().click();
+        Thread.sleep(1000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
     }
 
     //带分的散装商品信用卡支付
-    public static void bulkGoodsCreditCardSale(AndroidDriver driver) {
+    public static void bulkGoodsCreditCardSale(AndroidDriver driver) throws InterruptedException {
         CashierPage cashierPage = new CashierPage(driver);
         cashierPage.pressWalkingMemberButton(driver);
         cashierPage.scanCodeBar().sendKeys(cashierPage.BULKGOODSWITHCENTS);
@@ -387,10 +453,12 @@ public class StartApp extends Base {
 //        WebElement CashButton = (new WebDriverWait(driver, 20))
 //                .until(ExpectedConditions.presenceOfElementLocated(By.id("com.yijiupi.retail:id/xianjinLL")));
 //        CashButton.click();
-        cashierPage.cashSaleButton().click();
-        cashierPage.creditCardButton().click();
+        cashierPage.getNewCashier().click();  //收款
+        cashierPage.creditCardButton().click(); //信用卡
         cashierPage.confirmButton().click();
         cashierPage.totalPayButton().click();
+        Thread.sleep(1000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
     }
 
     //退款
@@ -411,6 +479,7 @@ public class StartApp extends Base {
         cashierPage.enSureRefundButton().click();
         cashierPage.getInputBoxOfLastSixNumber().sendKeys(text.substring(text.length()-6));
         cashierPage.confirmButton().click();
+
     }
 
     public static void pressDailyTrade(AndroidDriver driver) {
