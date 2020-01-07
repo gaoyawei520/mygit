@@ -38,7 +38,7 @@ public class BaseForShopKeeper {
         desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "160");
         desiredCapabilities.setCapability("resetKeyboard", true);//控制是否使用appium键盘
         desiredCapabilities.setCapability("unicodeKeyboard",true);//控制是否安装自带输入法
-        desiredCapabilities.setCapability(MobileCapabilityType.UDID,"FFK0217504001734");//选择运行哪台机器,用UID号来区别,只有一台机器的话可以注释掉
+        //desiredCapabilities.setCapability(MobileCapabilityType.UDID,"FFK0217504001734");//选择运行哪台机器,用UID号来区别,只有一台机器的话可以注释掉
         //desiredCapabilities.setCapability("automationName", "uiautomator2");
         //AndroidDriver driver = new AndroidDriver(new URL("http://197.168.14.39:4723/wd/hub"),desiredCapabilities);
         driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"),desiredCapabilities);//手动改端口为4713,默认端口则不需要修改

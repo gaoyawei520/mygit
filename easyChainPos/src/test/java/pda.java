@@ -135,17 +135,17 @@ public class pda {
         driver.findElementByAndroidUIAutomator("text(\"取消订单\")").click();//取消进货单
         driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         Thread.sleep(3000);
-        String num0=driver.findElementByXPath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.widget.ScrollView[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.TextView[1]").getText();//获取订单号
-        String num=num0.substring(5);
+        String num0=driver.findElementByXPath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.widget.ScrollView[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.TextView[2]").getText();//获取订单号
+        //String num=num0.substring(5); //去掉前面的文字
         driver.findElementByAccessibilityId("TopTitle_backButton").click();//返回
         Thread.sleep(3000);
         driver.findElementByAndroidUIAutomator("text(\"全部\")").click();
         Thread.sleep(3000);
         driver.findElementByClassName("android.widget.EditText").clear();
-        driver.findElementByClassName("android.widget.EditText").sendKeys(num);
+        driver.findElementByClassName("android.widget.EditText").sendKeys(num0);
         enter();
         Thread.sleep(3000);
-        driver.findElementByAndroidUIAutomator("text(\""+"["+num+"]"+"\")");
+        driver.findElementByAndroidUIAutomator("text(\""+"["+num0+"]"+"\")");
         driver.findElementByAndroidUIAutomator("text(\"已取消\")");
         driver.findElementByAccessibilityId("TopTitle_backButton").click();//返回
         Thread.sleep(500);
@@ -157,11 +157,11 @@ public class pda {
         Reporter.log("仓配进货1");
     }
 
-    //@Test(priority = 3)//换账号登录,仓配进货,然后退货
+    //@Test(priority = 3)//仓配进货,然后退货
     public void 仓配进货2() throws InterruptedException {
         driver.findElementByAccessibilityId("TopTitle_backButton").click();//返回
         Thread.sleep(500);
-        driver.findElementByXPath("//android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//点击我的
+        /*driver.findElementByXPath("//android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//点击我的
         Thread.sleep(100);
         driver.findElementByAndroidUIAutomator("text(\"退出登录\")").click();
         Thread.sleep(500);
@@ -175,7 +175,7 @@ public class pda {
         Thread.sleep(4000);//换账号登录
 
         driver.findElementByAndroidUIAutomator("text(\"统仓统配\")").click();
-        Thread.sleep(500);
+        Thread.sleep(500);*/
         driver.findElementByAndroidUIAutomator("text(\"快捷进货\")").click();
         Thread.sleep(3000);
         driver.findElementByClassName("android.widget.TextView").click();
@@ -238,15 +238,16 @@ public class pda {
         Reporter.log("仓配进货2");
     }
 
-    @Test(priority = 4)//换账号登录,直配进货,然后退货,同时到商品页面校验库存是否正确
+    @Test(priority = 4)//直配进货,然后退货,同时到商品页面校验库存是否正确
     public void 直配流程() throws InterruptedException {
         driver.findElementByAccessibilityId("TopTitle_backButton").click();//返回
         Thread.sleep(500);
-        driver.findElementByXPath("//android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//点击我的
+
+       /* driver.findElementByXPath("//android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//点击我的     换账号登录
         Thread.sleep(100);
         driver.findElementByAndroidUIAutomator("text(\"退出登录\")").click();
         Thread.sleep(500);
-        login();//换账号登录
+        login();//换账号登录*/
 
 
         driver.findElementByAndroidUIAutomator("text(\"商品\")").click();//获取库存并提交进货单
@@ -278,9 +279,9 @@ public class pda {
         driver.findElementByClassName("android.widget.EditText").sendKeys("2");
         driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.widget.EditText[1]").click();
         driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.widget.EditText[1]").clear();
-        driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.widget.EditText[1]").sendKeys("9");//输入进货价格
+        driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.widget.EditText[1]").sendKeys("6");//输入进货价格
         Thread.sleep(100);
-        driver.findElementByAndroidUIAutomator("text(\"18.00\")");//校验进货合计金额正确
+        driver.findElementByAndroidUIAutomator("text(\"12.00\")");//校验进货合计金额正确
         driver.findElementByAndroidUIAutomator("text(\"确定\")").click();
         Thread.sleep(100);
         driver.findElementByAndroidUIAutomator("text(\"请选择\")").click();
@@ -315,7 +316,7 @@ public class pda {
         driver.findElementByClassName("android.widget.EditText").clear();
         driver.findElementByClassName("android.widget.EditText").sendKeys("1");
         driver.findElementByAndroidUIAutomator("text(\"提交\")").click();
-        driver.findElementByAndroidUIAutomator("text(\"确定\")").click();
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         Thread.sleep(3000);
         driver.findElementByAccessibilityId("TopTitle_backButton").click();
         Thread.sleep(1000);
@@ -447,7 +448,7 @@ public class pda {
         driver.findElementByAndroidUIAutomator("text(\"已作废\")").click();
         Thread.sleep(3000);
         driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//详情
-        driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();
+        //driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();
         Thread.sleep(3000);
         driver.findElementByAndroidUIAutomator("text(\""+zuofei0+"\")");
         driver.findElementByAccessibilityId("TopTitle_backButton").click();//返回
@@ -524,7 +525,11 @@ public class pda {
         driver.findElementByAndroidUIAutomator("text(\"提交\")").click();
         Thread.sleep(2000);
         driver.findElementByAndroidUIAutomator("text(\"确定\")").click();
+        Thread.sleep(3000);
+        driver.findElementByAndroidUIAutomator("text(\"确认入库\")").click();
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         Thread.sleep(2000);
+        driver.findElementByAndroidUIAutomator("text(\"确定\")").click();//这里会被防重复提交拦截,所以需要确认入库2次
         driver.findElementByAndroidUIAutomator("text(\"确认入库\")").click();
         driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         Thread.sleep(3000);
@@ -561,7 +566,7 @@ public class pda {
         Thread.sleep(100);
 
         driver.findElementByClassName("android.widget.EditText").clear();
-//        driver.findElementByClassName("android.widget.EditText").sendKeys("40394");//相同的商品扫码会拦截
+//        driver.findElementByClassName("android.widget.EditText").sendKeys("40394");//相同的商品扫码会拦截,现在不会拦截
 //        driver.pressKey(keyEvent);
         Thread.sleep(3000);
 
@@ -614,6 +619,7 @@ public class pda {
 
     @Test(priority = 15)//供应商直配_退货1  订单详情中退货 ,第一次退掉全部商品,第二次就无法继续退货,然后完成退货,
     public void tuihuo1() throws InterruptedException {
+        //login(); driver.findElementByAndroidUIAutomator("text(\"供应商直配\")").click();//调试专用
         driver.findElementByAndroidUIAutomator("text(\"已入库\")").click();
         Thread.sleep(3000);
         driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//详情
@@ -621,6 +627,7 @@ public class pda {
         Thread.sleep(3000);
         String num0=driver.findElementByXPath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.widget.ScrollView[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.TextView[1]").getText();
         String num=num0.substring(5);//截取订单号,把前5位汉字去掉
+        //System.out.println(num);
         driver.findElementByAndroidUIAutomator("text(\"退货\")").click();
         Thread.sleep(500);
         driver.findElementByAndroidUIAutomator("text(\"提交\")").click();//数据不全无法提交
@@ -642,7 +649,7 @@ public class pda {
         driver.findElementByAndroidUIAutomator("text(\"确定\")").click();
         Thread.sleep(500);
         driver.findElementByAndroidUIAutomator("text(\"提交\")").click();
-        driver.findElementByAndroidUIAutomator("text(\"确定\")").click();
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         Thread.sleep(3000);//
         driver.findElementByAccessibilityId("TopTitle_backButton").click();//返回
         Thread.sleep(3000);//返回列表
@@ -654,7 +661,7 @@ public class pda {
         keyEvent.withKey(AndroidKey.ENTER);//模拟enter键
         Thread.sleep(3000);
         driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//详情
-        driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//详情
+        //driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//详情
         Thread.sleep(3000);
         driver.findElementByAndroidUIAutomator("text(\"退货\")").click();
         Thread.sleep(500);
@@ -811,7 +818,8 @@ public class pda {
         driver.findElementByAndroidUIAutomator("text(\"删除\")").click();
         driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         Thread.sleep(3000);
-        String num=driver.findElementByXPath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.widget.ScrollView[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.TextView[2]").getText();
+        String num0=driver.findElementByXPath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.widget.ScrollView[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.TextView[1]").getText();
+        String num=num0.substring(5);
         driver.findElementByAccessibilityId("TopTitle_backButton").click();//返回
         Thread.sleep(3000);
         driver.findElementByAndroidUIAutomator("text(\"已作废\")").click();
@@ -824,7 +832,7 @@ public class pda {
         driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//详情
         driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//详情
         Thread.sleep(3000);
-        driver.findElementByAndroidUIAutomator("text(\""+num+"\")");
+        driver.findElementByAndroidUIAutomator("text(\""+num0+"\")");
         driver.findElementByAccessibilityId("TopTitle_backButton").click();//返回
         Thread.sleep(3000);
         driver.findElementByAccessibilityId("TopTitle_backButton").click();//返回

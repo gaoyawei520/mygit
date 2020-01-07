@@ -20,10 +20,10 @@
         </classes>
     </test>
 
-    <test name="pos" verbose="2"  preserve-order="true">   <!--true表示按照顺序执行-->
-        <classes>
-            <class name="pda" />
-        </classes>
-    </test>
+    <!--<test name="pos" verbose="2"  preserve-order="true">   &lt;!&ndash;true表示按照顺序执行&ndash;&gt;-->
+        <!--<classes>-->
+            <!--<class name="pda" />-->
+        <!--</classes>-->
+    <!--</test>-->
 
 </suite>

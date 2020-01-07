@@ -64,7 +64,7 @@ public class shangpincase extends BaseForShopKeeper{
         ShopPageForShopKeeper shopPageForShopKeeper = new ShopPageForShopKeeper(driver);
         MainPageForShopKeeper mainPageForShopKeeper = new MainPageForShopKeeper(driver);
         mainPageForShopKeeper.huadong();
-        mainPageForShopKeeper.huadong();
+        //mainPageForShopKeeper.huadong();
         Thread.sleep(100);
         shopPageForShopKeeper.getShopManagement().click();//打开商品管理
         Thread.sleep(2000L);
