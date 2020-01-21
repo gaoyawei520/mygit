@@ -58,11 +58,10 @@ public class pda {
         desiredCapabilities.setCapability(AndroidMobileCapabilityType.RESET_KEYBOARD,true);
         desiredCapabilities.setCapability(MobileCapabilityType.FULL_RESET,false);
         desiredCapabilities.setCapability("noReset", true);//false,true 是否重置软件,控制每次是否登录
-
         //desiredCapabilities.setCapability(MobileCapabilityType.UDID,"197.168.14.232:5555");//选择运行哪台机器,用UID号来区别,只有一台机器的话可以注释掉
-
+        desiredCapabilities.setCapability("sessionOverride",true);  //第二次运行可覆盖第一次的session,建议开启
         desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "160");
-        desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");//升级为uiautomator2
+        desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "appium");//使用哪个自动化引擎,uiautomator2   appium
         //desiredCapabilities.setCapability("automationName", "uiautomator2");//升级为uiautomator2
         //desiredCapabilities.setCapability("ANDROID_UIAUTOMATOR", "uiautomator2");//升级为uiautomator2,Python用的
         //AndroidDriver driver = new AndroidDriver(new URL("http://192.168.217.2:4723/wd/hub"),desiredCapabilities);
@@ -123,8 +122,8 @@ public class pda {
         Thread.sleep(2000);
 //        driver.findElementByXPath("//android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]").click();//点击提交到仓库
 //        driver.findElementByXPath("//android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]").click();//点击提交到仓库
-        driver.findElementByAndroidUIAutomator("new UiSelector().className(\"android.widget.TextView\").textContains(\"提交到仓库\")").click();
-
+        //driver.findElementByAndroidUIAutomator("new UiSelector().className(\"android.widget.TextView\").textContains(\"提交到仓库\")").click();
+        driver.findElementByAndroidUIAutomator("textContains(\"提交到仓库\")").click();
         Thread.sleep(100);
         driver.findElementByAndroidUIAutomator("text(\"确认\")").click();//创建进货单
         Thread.sleep(3000);
@@ -774,7 +773,7 @@ public class pda {
         enter();
         Thread.sleep(3000);
         driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//详情
-        driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//详情
+        //driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//详情
         Thread.sleep(1000);
         driver.findElementByAndroidUIAutomator("text(\""+num0+"\")");
         driver.findElementByAccessibilityId("TopTitle_backButton").click();//返回
@@ -830,7 +829,7 @@ public class pda {
         enter();
         Thread.sleep(3000);
         driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//详情
-        driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//详情
+        //driver.findElementByXPath("//android.widget.ScrollView/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ImageView[1]").click();//详情
         Thread.sleep(3000);
         driver.findElementByAndroidUIAutomator("text(\""+num0+"\")");
         driver.findElementByAccessibilityId("TopTitle_backButton").click();//返回

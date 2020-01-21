@@ -75,7 +75,7 @@ public class RunTestCase extends Base {
     }
 
 
-//    @Test(priority = 2)//切换环境为pre,兼容性测试需要
+    @Test(priority = 2)//切换环境为pre,兼容性测试需要
     public void qiehuan() throws InterruptedException {
         driver.findElementByAndroidUIAutomator("text(\"设置\")").click();
         driver.findElementByAndroidUIAutomator("text(\"修改密码\")").click();

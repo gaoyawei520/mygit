@@ -1,3 +1,5 @@
 git add ./
 git commit -m '提交了一些厉害的东西'
- git push origin master   //提交到远程仓库
+git push origin master   //提交到远程仓库
+
+https://github.com/gaoyawei520/mygit.git

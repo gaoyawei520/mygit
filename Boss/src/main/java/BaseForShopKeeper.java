@@ -34,7 +34,8 @@ public class BaseForShopKeeper {
         desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,"com.yijiupi.storeboss");
         desiredCapabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,"com.yjpstorebossproject.MainActivity");//com.yjpstorebossproject.MainActivity com.yijiupi.storebosspush-1
         desiredCapabilities.setCapability(MobileCapabilityType.FULL_RESET,false);
-        desiredCapabilities.setCapability("noReset", true);//控制每次是否登录,每次是否重启APP
+        desiredCapabilities.setCapability("noReset", true);//控制每次是否重置APP
+        desiredCapabilities.setCapability("sessionOverride",true);  //第二次运行可覆盖第一次的session,建议开启
         desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "160");
         desiredCapabilities.setCapability("resetKeyboard", true);//控制是否使用appium键盘
         desiredCapabilities.setCapability("unicodeKeyboard",true);//控制是否安装自带输入法
