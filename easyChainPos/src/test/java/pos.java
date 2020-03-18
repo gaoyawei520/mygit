@@ -42,7 +42,8 @@ import java.util.concurrent.TimeUnit;
 public class pos {
     public static AndroidDriver driver;
     public static final String packagename="com.yijiupi.easychain"; // testpre (release)   test   pre  null
-
+    public static final String account="17671607980";
+    public static final String password="709394";
     @BeforeClass
     public static AndroidDriver SetUp() throws MalformedURLException {
 
@@ -94,9 +95,9 @@ public class pos {
     public void login() throws InterruptedException {
         Thread.sleep(3000);
         driver.findElementById(packagename+":id/userNameET").clear();//账号输入框
-        driver.findElementById(packagename+":id/userNameET").sendKeys("17671607980");
+        driver.findElementById(packagename+":id/userNameET").sendKeys(account);
         driver.findElementById(packagename+":id/userPwdET").clear();//密码输入框
-        driver.findElementById(packagename+":id/userPwdET").sendKeys("607980");
+        driver.findElementById(packagename+":id/userPwdET").sendKeys(password);
         denglu().click();
         //driver.findElementByAndroidUIAutomator("new UiSelector().className(\"android.widget.Button\").textContains(\"登\")").click();
         //AndroidElement denglu= (AndroidElement) driver.findElementByAndroidUIAutomator("new UiSelector().className(\"android.widget.TextView\").textContains(\"登\")");
@@ -107,7 +108,7 @@ public class pos {
 
     }
 
-    //@Test(priority = 2)//切换环境为pre,兼容性测试专用
+    @Test(priority = 2)//切换环境为pre,兼容性测试专用
     public void checkout() throws InterruptedException {
         driver.findElementByAndroidUIAutomator("text(\"设置\")").click();
         driver.findElementByAndroidUIAutomator("text(\"修改密码\")").click();
@@ -250,7 +251,7 @@ public class pos {
         driver.findElementByAndroidUIAutomator("text(\"确定\")").click();
         Thread.sleep(1000);
         driver.findElementById(packagename+":id/et_number").clear();
-        driver.findElementById(packagename+":id/et_number").sendKeys("607980");//密码错误,重新输入密码
+        driver.findElementById(packagename+":id/et_number").sendKeys("709394");//密码错误,重新输入密码
         driver.findElementByAndroidUIAutomator("text(\"确定\")").click();
         Thread.sleep(2000);
         driver.findElementByAndroidUIAutomator("text(\"6折\")").click();
@@ -369,7 +370,7 @@ public class pos {
         driver.findElementByAndroidUIAutomator("text(\"确定\")").click();
         Thread.sleep(500);
         driver.findElementById(packagename+":id/et_number").clear();
-        driver.findElementById(packagename+":id/et_number").sendKeys("607980");//输入正确的密码
+        driver.findElementById(packagename+":id/et_number").sendKeys("709394");//输入正确的密码
         driver.findElementByAndroidUIAutomator("text(\"确定\")").click();
         Thread.sleep(500);
         driver.findElementById(packagename+":id/ed_ipnut").sendKeys("40394");//输入条码
@@ -667,7 +668,7 @@ public class pos {
         driver.findElementByAndroidUIAutomator("text(\"清空\")").click();
         driver.findElementById(packagename+":id/ok_btn").click();//登录
         Thread.sleep(100);
-        driver.findElementById(packagename+":id/psw_et").sendKeys("607980");//输入密码
+        driver.findElementById(packagename+":id/psw_et").sendKeys(password);//输入密码
         driver.findElementById(packagename+":id/ok_btn").click();//登录
         Thread.sleep(1000);
         Reporter.log("锁定");
@@ -687,7 +688,7 @@ public class pos {
     }
 
 
-    @Test(priority = 30)
+    //@Test(priority = 30)
     /*离线收银 1下载商品然后关闭网络 2重新登录,进入离线收银模式 3离线散客收银 4离线vip会员收银 5开启网络  6重新登录
     7校验不同时间段的上传订单功能,自动上传时间  0-7 13-17 23-24,其他时间不自动上传*/
     public void offlineCashier() throws InterruptedException {
@@ -721,9 +722,9 @@ public class pos {
         driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         Thread.sleep(100);
         driver.findElementById(packagename+":id/userNameET").clear();//账号输入框
-        driver.findElementById(packagename+":id/userNameET").sendKeys("17671607980");
+        driver.findElementById(packagename+":id/userNameET").sendKeys(account);
         driver.findElementById(packagename+":id/userPwdET").clear();//密码输入框
-        driver.findElementById(packagename+":id/userPwdET").sendKeys("607980");
+        driver.findElementById(packagename+":id/userPwdET").sendKeys(password);
         driver.findElementById(packagename+":id/loginBtn").click();//登录
         Thread.sleep(100);
         driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
@@ -814,9 +815,9 @@ public class pos {
         driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         Thread.sleep(100);
         driver.findElementById(packagename+":id/userNameET").clear();//账号输入框
-        driver.findElementById(packagename+":id/userNameET").sendKeys("17671607980");
+        driver.findElementById(packagename+":id/userNameET").sendKeys(account);
         driver.findElementById(packagename+":id/userPwdET").clear();//密码输入框
-        driver.findElementById(packagename+":id/userPwdET").sendKeys("607980");
+        driver.findElementById(packagename+":id/userPwdET").sendKeys(password);
         driver.findElementById(packagename+":id/loginBtn").click();//登录
         Thread.sleep(3000);
 

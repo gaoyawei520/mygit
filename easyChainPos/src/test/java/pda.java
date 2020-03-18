@@ -58,7 +58,9 @@ public class pda {
         desiredCapabilities.setCapability(AndroidMobileCapabilityType.RESET_KEYBOARD,true);
         desiredCapabilities.setCapability(MobileCapabilityType.FULL_RESET,false);
         desiredCapabilities.setCapability("noReset", true);//false,true 是否重置软件,控制每次是否登录
-        //desiredCapabilities.setCapability(MobileCapabilityType.UDID,"197.168.14.232:5555");//选择运行哪台机器,用UID号来区别,只有一台机器的话可以注释掉
+
+        desiredCapabilities.setCapability(MobileCapabilityType.UDID,"127.0.0.1:7555");//选择运行哪台机器,用UID号来区别,只有一台机器的话可以注释掉
+
         desiredCapabilities.setCapability("sessionOverride",true);  //第二次运行可覆盖第一次的session,建议开启
         desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "160");
         desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "appium");//使用哪个自动化引擎,uiautomator2   appium
@@ -94,7 +96,7 @@ public class pda {
         //mima1.get(1).click();
 
         mima.clear();
-        mima.sendKeys("607980");
+        mima.sendKeys("709394");
         Thread.sleep(100);
 
         //driver.findElementByAndroidUIAutomator("text(\"登录\")").click();
@@ -116,7 +118,9 @@ public class pda {
         driver.findElementByClassName("android.widget.EditText").clear();
         driver.findElementByClassName("android.widget.EditText").sendKeys("店仓");
         driver.findElementByAndroidUIAutomator("text(\"搜索\")").click();
+        Thread.sleep(1000);
         driver.findElementByXPath("//android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[5]/android.view.ViewGroup[4]/android.widget.ImageView[1]").click();//点击+
+        //driver.findElementByXPath("//android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[5]/android.view.ViewGroup[4]/android.widget.ImageView[1]").click();//点击+
         Thread.sleep(1000);
         driver.findElementByXPath("//android.widget.FrameLayout/android.view.ViewGroup[1]/android.view.ViewGroup[3]/android.view.ViewGroup[1]").click();//点击去进货
         Thread.sleep(2000);
@@ -490,6 +494,8 @@ public class pda {
         driver.findElementByAndroidUIAutomator("text(\"确定\")").click();
         Thread.sleep(100);
         driver.findElementByAndroidUIAutomator("text(\"提交\")").click();//未选择供应商保存被拦截
+        Thread.sleep(100);
+        driver.findElementByAndroidUIAutomator("text(\"确定\")").click();
         Thread.sleep(100);
         driver.findElementByAndroidUIAutomator("text(\"请选择\")").click();
         Thread.sleep(1000);
