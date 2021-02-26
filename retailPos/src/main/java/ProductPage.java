@@ -76,7 +76,7 @@ public class ProductPage {
     @AndroidFindBy(uiAutomator = "text(\"进货\")")
     AndroidElement purchase;
     //进货数量
-    @AndroidFindBy(id = Environment.PackageName+":id/ed_purchase_count")
+    @AndroidFindBy(id = Environment.PackageName+":id/number_tv")
     AndroidElement purchaseCount;
 
     @AndroidFindBy(uiAutomator = "text(\"编辑\")")

@@ -11,7 +11,6 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 
 public class MainPageForShopKeeper {
@@ -939,7 +938,7 @@ public class MainPageForShopKeeper {
 
         int height=driver.manage().window().getSize().height;
 
-        int y1 = height*2/3; //上滑的开始点，从y1开始也就是屏幕的四分之三处
+        int y1 = height*2/3; //上滑的开始点，从y1开始也就是屏幕三分之二处
         int y2 = height*1/4; //上滑的结束点，到y2结束也就是屏幕的三分之一处
         TouchAction tAction = new TouchAction(driver);
         PointOption point1 = PointOption.point(width / 2, y1);//上滑的开始点

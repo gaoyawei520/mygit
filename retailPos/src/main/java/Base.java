@@ -37,7 +37,7 @@ public class Base {
         desiredCapabilities.setCapability(AndroidMobileCapabilityType.RESET_KEYBOARD,true);
         desiredCapabilities.setCapability(MobileCapabilityType.FULL_RESET,false);
 
-        desiredCapabilities.setCapability(MobileCapabilityType.UDID,"192.168.164.101:5555");//选择运行哪台机器,用UID号来区别,只有一台机器的话可以注释掉
+        //desiredCapabilities.setCapability(MobileCapabilityType.UDID,"192.168.164.101:5555");//选择运行哪台机器,用UID号来区别,只有一台机器的话可以注释掉
 
         desiredCapabilities.setCapability("noReset", true);//false,true 是否重置软件,控制每次是否登录
         desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "160");
@@ -47,7 +47,7 @@ public class Base {
         //desiredCapabilities.setCapability("ANDROID_UIAUTOMATOR", "uiautomator2");//升级为uiautomator2
         //AndroidDriver driver = new AndroidDriver(new URL("http://192.168.217.2:4723/wd/hub"),desiredCapabilities);
 
-        driver = new AndroidDriver(new URL("http://localhost:4724/wd/hub"),desiredCapabilities);
+        driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"),desiredCapabilities);
         driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);
         //点击首页的几个烦人按钮,如果不登录则不需要
         /*WebElement allowButton = (new WebDriverWait(driver, 20))

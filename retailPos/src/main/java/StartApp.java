@@ -216,7 +216,7 @@ public class StartApp extends Base {
         Thread.sleep(1000);
         cashierPage.getNewCashier().click();  //收款
         cashierPage.cashSaleButton().click();  //现金
-        cashierPage.getPrintReceipt().click();//取消打印小票
+        //cashierPage.getPrintReceipt().click();//取消打印小票
         cashierPage.totalPayButton().click();  //支付
         Thread.sleep(1000);
         driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
@@ -296,7 +296,7 @@ public class StartApp extends Base {
         cashierPage.getNewCashier().click();
         cashierPage.creditCardButton().click();//信用卡
         cashierPage.confirmButton().click();
-        cashierPage.getPrintReceipt().click();//勾选打印小票
+        //cashierPage.getPrintReceipt().click();//勾选打印小票
         cashierPage.totalPayButton().click();
         Thread.sleep(1000);
         driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
@@ -475,7 +475,8 @@ public class StartApp extends Base {
         cashierPage.search().click();
         cashierPage.getChooseAllItem().click();
         //cashierPage.noCodeProductAddButton().click();
-        cashierPage.secondRefundButton().click();
+        //cashierPage.secondRefundButton().click();//点击退款,xpath写的已经无法使用
+        driver.findElementById(Environment.PackageName + ":id/refundConfirmRL").click();//点击退款
         cashierPage.enSureRefundButton().click();
         cashierPage.getInputBoxOfLastSixNumber().sendKeys(text.substring(text.length()-6));
         cashierPage.confirmButton().click();

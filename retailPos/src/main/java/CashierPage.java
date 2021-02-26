@@ -40,11 +40,11 @@ public class CashierPage {
             "/android.support.v4.view.ViewPager/android.widget.LinearLayout" +
             "/android.widget.FrameLayout/android.widget.LinearLayout" +
             "/android.widget.RelativeLayout/android.widget.TextView")
-    AndroidElement secondRefundButton;
+    AndroidElement secondRefundButton;//退款按钮
 
     //添加会员按钮
-    @AndroidFindBy(uiAutomator = "text(\"添加会员\")")
-    AndroidElement addMember;
+    @AndroidFindBy
+            (uiAutomator = "text(\"添加会员\")") AndroidElement addMember;
 
     //输入会员手机号框
     @AndroidFindBy(uiAutomator = "text(\"请输入会员号/手机号\")")
@@ -219,9 +219,7 @@ public class CashierPage {
         return printReceipt;
     }
 
-    public AndroidElement addMember() {
-        return addMember;
-    }
+    public AndroidElement addMember() { return addMember; }
 
     public AndroidElement inputMemberPhoneNumber() {
         return inputMemberPhoneNumber;

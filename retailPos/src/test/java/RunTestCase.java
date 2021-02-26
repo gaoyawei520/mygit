@@ -62,6 +62,7 @@ public class RunTestCase extends Base {
 //    @AndroidFindBy(uiAutomator = "text(\"交接\")")  AndroidElement handOversButton;
 //    public AndroidElement handOversButton(){ return handOversButton; }
 
+
     @Test(priority = 1)//登录
     public void login() throws InterruptedException {
         Thread.sleep(3000);
@@ -75,7 +76,7 @@ public class RunTestCase extends Base {
     }
 
 
-    @Test(priority = 2)//切换环境为pre,兼容性测试需要
+    //@Test(priority = 2)//切换环境为pre,兼容性测试需要
     public void qiehuan() throws InterruptedException {
         driver.findElementByAndroidUIAutomator("text(\"设置\")").click();
         driver.findElementByAndroidUIAutomator("text(\"修改密码\")").click();
@@ -104,7 +105,6 @@ public class RunTestCase extends Base {
 
     @Test(priority = 3)//新VIP会员赊账支付
     public void vipMemberCreditSale() throws InterruptedException {
-        Thread.sleep(2000);
         StartApp.vipMemberCreditSale(driver);
     }
 
@@ -311,7 +311,10 @@ public class RunTestCase extends Base {
         String beforeStock = productPage.getGetStockOfBeforePurchase().getText();//获取购买之前的数量
         String beforeStock1 = beforeStock.substring(0, beforeStock.length() - 1);//使购买之前的数量去掉后面的瓶以便比对
         productPage.getPurchase().click();//点击购买按钮
-        productPage.getPurchaseCount().sendKeys(Environment.PurchaseCount);//输入购买1瓶
+        //productPage.getPurchaseCount().sendKeys(Environment.PurchaseCount);//输入购买1瓶
+        productPage.getPurchaseCount().click();//点击输入数量
+        driver.findElementById(Environment.PackageName+":id/codeET").sendKeys("1");//输入购买1瓶
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         productPage.getPurchase().click();//点击购买按钮
         String afterStock = productPage.getGetStockOfBeforePurchase().getText();//获取购买后的库存文本
         Thread.sleep(1500);
@@ -533,8 +536,11 @@ public class RunTestCase extends Base {
         String beforeStockNumber = text.substring(0, text.length() - 1);
         int beforeStockNumber1 = Integer.parseInt(beforeStockNumber);
         int beforeStockNumber2 = beforeStockNumber1 + 1;
-        productPage.getOutsidePurcase().click();
-        productPage.getOutsidePurchaseAmount().sendKeys(Environment.PurchaseCount);
+        productPage.getOutsidePurcase().click();//点击外采
+        //productPage.getOutsidePurchaseAmount().sendKeys(Environment.PurchaseCount);//输入采购数量
+        productPage.getPurchaseCount().click();//点击输入数量
+        driver.findElementById(Environment.PackageName+":id/codeET").sendKeys("1");//输入购买1瓶
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         productPage.getPurchase().click();
         List<WebElement> afterStock = driver.findElementsById(Environment.PackageName + ":id/tv_stock");
         String afterStockNumber = afterStock.get(1).getText();
