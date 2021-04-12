@@ -6,6 +6,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.remote.MobilePlatform;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
+import org.apache.tools.ant.taskdefs.Javadoc;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
@@ -29,10 +30,11 @@ import java.util.concurrent.TimeUnit;
 /*
   使用到的具体信息
   登录账号 17671607988
-  店铺参数 vip收费关闭   支持负库存收银 未交接班
+  店铺参数 vip收费开启   支持负库存收银 未交接班
+  次数卡会员 17671607988
   称重条码  4039400310001375
-  会员id = 169542813580194562 ,大力出奇迹 ,vip会员
-  会员手机号 18871182396      普通会员
+//  会员id = 169542813580194562 ,大力出奇迹 ,vip会员
+//  会员手机号 18871182396      普通会员
   商品助记码 40394,手撕包
   商品助记码g ml kkkl nfsq
   设置折扣的类目,饮料-碳酸饮料,饮料-水未设置折扣
@@ -46,6 +48,9 @@ public class pos {
     public static final String packagename="com.yijiupi.easychain"; // testpre (release)   test   pre  null
     public static final String account="17671607988";
     public static final String password="709394";
+    public static final String weixinPayCode="134684755012345678";
+    public static final String amountVip="17671607988";
+    public static final String cardNo="9168880008000070";
     @BeforeClass
     public static AndroidDriver SetUp() throws MalformedURLException {
 
@@ -109,6 +114,7 @@ public class pos {
         Reporter.log("登录成功");
 
     }
+
 
     //@Test(priority = 2)//切换环境为pre,兼容性测试专用
     public void checkout() throws InterruptedException {
@@ -196,6 +202,10 @@ public class pos {
         driver.findElementById(packagename+":id/codeET").sendKeys("2.36");//2.36
         driver.findElementById(packagename+":id/tv_ok").click();//确认
         Thread.sleep(100);
+        driver.findElementByAndroidUIAutomator("text(\"查VIP优惠\")").click();
+        Thread.sleep(1500);
+        driver.findElementByAndroidUIAutomator("textContains(\"VIP会员本次可节省\")");
+        driver.findElementById(packagename+":id/iv_close").click();//关闭
         driver.findElementByAndroidUIAutomator("text(\"收款\")").click();
         driver.findElementByXPath("//android.widget.TextView[@resource-id='"+packagename+":id/tv' and @text='现金']").click();
         driver.findElementByAndroidUIAutomator("text(\"支付\")").click();
@@ -205,23 +215,47 @@ public class pos {
         Reporter.log("散客购买散称商品");
     }
 
+    @Test(priority = 6)//购买vip次数卡
+    public void buyVip() throws InterruptedException {
+        driver.findElementByAndroidUIAutomator("text(\"购买VIP\")").click();
+        driver.findElementById(packagename+":id/rt_input_card").sendKeys(cardNo);
+        driver.findElementById(packagename+":id/rt_input").sendKeys(amountVip);
+        driver.findElementByAndroidUIAutomator("textContains(\"次卡\")").click();
+        driver.findElementByAndroidUIAutomator("text(\"下一步\")").click();
+        Thread.sleep(100);
+        driver.findElementByAndroidUIAutomator("resourceId(\""+packagename+":id/tv\").text(\"现金\")").click();
+        driver.findElementByAndroidUIAutomator("resourceId(\""+packagename+":id/tv_title\").text(\"支付\")").click();
+        Thread.sleep(100);
+        driver.findElementByAndroidUIAutomator("text(\"取消\")").click();
+        Reporter.log("购买次数卡");
+    }
 
 
 
-    @Test(priority = 6)//vip会员现金付款
+
+    @Test(priority = 7)//vip会员现金付款  先用组合支付失败,再换现金付款
     public void shouyin3() throws InterruptedException {
         driver.findElementByAndroidUIAutomator("text(\"会员(F8)\")").click();
-        driver.findElementByClassName("android.widget.EditText").sendKeys("18871182396");
-        //driver.findElementById(packagename+":id/et_number").sendKeys("18871182396");
-        //driver.findElementById(packagename+":id/rb_member_id").click();//点击选择手机号搜索
+        driver.findElementByClassName("android.widget.EditText").sendKeys(amountVip);
         driver.findElementByAndroidUIAutomator("text(\"确定\")").click();//确定
         Thread.sleep(2000);
         driver.findElementById(packagename+":id/ed_ipnut").clear();
-        driver.findElementById(packagename+":id/ed_ipnut").sendKeys("ml");//搜索商品,搜索条件g
+        driver.findElementById(packagename+":id/ed_ipnut").sendKeys("ml");//搜索商品,搜索条件ml
         driver.findElementById(packagename+":id/btn_search").click();
         Thread.sleep(2000);
         driver.findElementByAndroidUIAutomator("text(\"选择\")").click();
         driver.findElementByAndroidUIAutomator("text(\"收款\")").click();
+        Thread.sleep(100);
+        driver.findElementById(packagename+":id/et_online_pay").clear();
+        driver.findElementById(packagename+":id/et_online_pay").sendKeys("0.01");
+        driver.findElementById(packagename+":id/et_pay_code").sendKeys(weixinPayCode);
+        driver.findElementByAndroidUIAutomator("text(\"支付\")").click();
+        Thread.sleep(1000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
+        driver.findElementByAndroidUIAutomator("resourceId(\""+packagename+":id/tv\").text(\"现金\")").click();
+        driver.findElementByAndroidUIAutomator("text(\"查询\")").click();
+        Thread.sleep(1000);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         driver.findElementByXPath("//android.widget.TextView[@resource-id='"+packagename+":id/tv' and @text='现金']").click();
         driver.findElementByAndroidUIAutomator("text(\"支付\")").click();
         Thread.sleep(2000);
@@ -230,16 +264,20 @@ public class pos {
         Reporter.log("会员现金收银");
     }
 
-    @Test(priority = 7)//vip会员称重条码收银,      扫描已打印好的称重条码  4039400310001375
+    @Test(priority = 8)//vip会员称重条码收银,      扫描已打印好的称重条码  4039400310001375
     public void shouyin4() throws InterruptedException {
         driver.findElementById(packagename+":id/ed_ipnut").clear();
         driver.findElementById(packagename+":id/ed_ipnut").sendKeys("4039400310001375");//扫描称重条码
         driver.findElementById(packagename+":id/btn_search").click();
         Thread.sleep(2000);
-        driver.findElementByAndroidUIAutomator("text(\"VIP会员\")").click();
+        //driver.findElementByAndroidUIAutomator("text(\"VIP会员\")").click();
+        driver.findElementByAndroidUIAutomator("text(\"会员(F8)\")").click();
+        driver.findElementByClassName("android.widget.EditText").sendKeys(amountVip);
+        driver.findElementByAndroidUIAutomator("text(\"确定\")").click();//确定
         Thread.sleep(2500);
         driver.findElementByAndroidUIAutomator("resourceId(\""+packagename+":id/tv_real_amount\").text(\"3.10\")").click();//校验价格为3.10,同时触发收款操作
-        driver.findElementById(packagename+":id/rl_xianjin").click();
+        //driver.findElementById(packagename+":id/rl_xianjin").click();
+        driver.findElementByXPath("//android.widget.TextView[@resource-id='"+packagename+":id/tv' and @text='现金']").click();
         driver.findElementByAndroidUIAutomator("text(\"支付\")").click();
         Thread.sleep(2000);
         driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
@@ -248,7 +286,7 @@ public class pos {
     }
 
 
-    @Test(priority = 8)//收银改价功能 ,第一个商品不支持改价,第二次输错密码,第三次正确改价然后再改价
+    @Test(priority = 9)//收银改价功能 ,第一个商品不支持改价,第二次输错密码,第三次正确改价然后再改价
     public void shouyin5() throws InterruptedException {
         driver.findElementById(packagename+":id/ed_ipnut").clear();
         driver.findElementById(packagename+":id/ed_ipnut").sendKeys("nfsq");//扫描助记码
@@ -285,7 +323,8 @@ public class pos {
         driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         Thread.sleep(100);
         driver.findElementByAndroidUIAutomator("text(\"收款\")").click();
-        driver.findElementById(packagename+":id/rl_xianjin").click();//现金
+        //driver.findElementById(packagename+":id/rl_xianjin").click();//现金
+        driver.findElementByXPath("//android.widget.TextView[@resource-id='"+packagename+":id/tv' and @text='现金']").click();
         driver.findElementByAndroidUIAutomator("text(\"支付\")").click();
         Thread.sleep(2000);
         driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
@@ -293,7 +332,7 @@ public class pos {
         Reporter.log("收银改价");
     }
 
-    @Test(priority = 9)//散称商品页面
+    @Test(priority = 10)//散称商品页面
     public void shouyin6() throws InterruptedException {
         driver.findElementByAndroidUIAutomator("text(\"散称商品\")").click();//页面搜索返回
         Thread.sleep(1000);
@@ -336,7 +375,8 @@ public class pos {
         driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         Thread.sleep(100);
         driver.findElementByAndroidUIAutomator("text(\"收款\")").click();
-        driver.findElementById(packagename+":id/rl_xianjin").click();//现金
+        //driver.findElementById(packagename+":id/rl_xianjin").click();//现金
+        driver.findElementByXPath("//android.widget.TextView[@resource-id='"+packagename+":id/tv' and @text='现金']").click();
         driver.findElementByAndroidUIAutomator("text(\"支付\")").click();
         Thread.sleep(2000);
         driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
@@ -370,20 +410,31 @@ public class pos {
         Reporter.log("vip会员余额付款");
     }
 
-    @Test(priority = 18)//vip999会员现金收银
+    @Test(priority = 18)//vip会员收银更改商品数量
     public void shouyin16() throws InterruptedException {
+//        driver.findElementByAndroidUIAutomator("text(\"会员(F8)\")").click();
+//        driver.findElementByClassName("android.widget.EditText").sendKeys("999");
+//        //driver.findElementById(packagename+":id/rb_member_id").click();//点击选择手机号搜索
+//        driver.findElementByAndroidUIAutomator("text(\"确定\")").click();//确定
+//        Thread.sleep(2500);
+//        driver.findElementByAndroidUIAutomator("text(\"VIP会员-999\")");
+//        driver.findElementByAndroidUIAutomator("text(\"散客\")").click();
+//        Thread.sleep(2500);
+//        //driver.findElementByAndroidUIAutomator("text(\"散客-888\")");
+//        driver.findElementByAndroidUIAutomator("text(\"VIP会员\")").click();
+//        Thread.sleep(2500);
+//        driver.findElementByAndroidUIAutomator("text(\"VIP会员-999\")");
+
         driver.findElementByAndroidUIAutomator("text(\"会员(F8)\")").click();
-        driver.findElementByClassName("android.widget.EditText").sendKeys("999");
-        //driver.findElementById(packagename+":id/rb_member_id").click();//点击选择手机号搜索
+        driver.findElementByClassName("android.widget.EditText").sendKeys(amountVip);
         driver.findElementByAndroidUIAutomator("text(\"确定\")").click();//确定
-        Thread.sleep(2500);
-        driver.findElementByAndroidUIAutomator("text(\"VIP会员-999\")");
+        Thread.sleep(2000);
         driver.findElementByAndroidUIAutomator("text(\"散客\")").click();
         Thread.sleep(2500);
-        //driver.findElementByAndroidUIAutomator("text(\"散客-888\")");
-        driver.findElementByAndroidUIAutomator("text(\"VIP会员\")").click();
-        Thread.sleep(2500);
-        driver.findElementByAndroidUIAutomator("text(\"VIP会员-999\")");
+        driver.findElementByAndroidUIAutomator("text(\"会员(F8)\")").click();
+        driver.findElementByClassName("android.widget.EditText").sendKeys(amountVip);
+        driver.findElementByAndroidUIAutomator("text(\"确定\")").click();//确定
+        Thread.sleep(2000);
         driver.findElementById(packagename+":id/ed_ipnut").clear();
         driver.findElementById(packagename+":id/ed_ipnut").sendKeys("ml");//搜索商品,搜索条件ml
         driver.findElementById(packagename+":id/btn_search").click();
@@ -411,14 +462,19 @@ public class pos {
         List<AndroidElement> jianshao=driver.findElementsById(packagename+":id/sub_number_iv");
         jianshao.get(0).click();
         driver.findElementByAndroidUIAutomator("new UiSelector().className(\"android.widget.TextView\").text(\"3\")");//校验第二个商品数量是否正确
+        driver.findElementByAndroidUIAutomator("text(\"查VIP优惠\")").click();
+        Thread.sleep(2000);
+        driver.findElementByAndroidUIAutomator("textContains(\"VIP会员本次可节省\")");
+        driver.findElementById(packagename+":id/iv_close").click();//关闭
         driver.findElementByAndroidUIAutomator("text(\"收款\")").click();
         driver.findElementByXPath("//android.widget.TextView[@resource-id='"+packagename+":id/tv' and @text='现金']").click();
         driver.findElementByAndroidUIAutomator("text(\"支付\")").click();
         Thread.sleep(2000);
         driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         driver.findElementByAndroidUIAutomator("text(\"收款\")");//校验操作成功没
-        Reporter.log("vip会员现金收银");
+        Reporter.log("收银台更改商品数量");
     }
+
 
     @Test(priority = 19)//收银添加赠品
     public void shouyin17() throws InterruptedException {
@@ -461,7 +517,8 @@ public class pos {
         Thread.sleep(2000);
         driver.findElementByAndroidUIAutomator("text(\"选择\")").click();
         driver.findElementByAndroidUIAutomator("text(\"收款\")").click();
-        driver.findElementById(packagename+":id/rl_xianjin").click();
+        //driver.findElementById(packagename+":id/rl_xianjin").click();
+        driver.findElementByXPath("//android.widget.TextView[@resource-id='"+packagename+":id/tv' and @text='现金']").click();
         driver.findElementByAndroidUIAutomator("text(\"支付\")").click();
         Thread.sleep(2000);
         driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
@@ -601,7 +658,7 @@ public class pos {
 
     @Test(priority = 25)//订单部分退款,退款需要输入订单号后6位进行,所以需要截取订单号
     public void tuihuo1() throws InterruptedException {
-        driver.findElementByAndroidUIAutomator("text(\"销售订单(F6)\")").click();
+        driver.findElementByAndroidUIAutomator("text(\"销售订单\")").click();
         Thread.sleep(3000);
         WebElement dingdan =(WebElement) driver.findElementsById(packagename+":id/orderNumTV").get(1);//列名订单号和列表的id是一样的,坑爹,所以取第一个单商品订单
         String num =dingdan.getText();//获取订单号
@@ -654,7 +711,7 @@ public class pos {
 
     @Test(priority = 26)//整单全退,退款需要输入订单号后6位进行,所以需要截取订单号
     public void tuihuo2() throws InterruptedException {
-        driver.findElementByAndroidUIAutomator("text(\"销售订单(F6)\")").click();
+        driver.findElementByAndroidUIAutomator("text(\"销售订单\")").click();
         Thread.sleep(3000);
         WebElement dingdan =(WebElement) driver.findElementsById(packagename+":id/orderNumTV").get(2);//列名订单号和列表的id是一样的,坑爹,所以取第三个
         String num =dingdan.getText();//获取订单号
@@ -689,7 +746,7 @@ public class pos {
 
     @Test(priority = 27)//部分退货,然后全退,退款需要输入订单号后6位进行,所以需要截取订单号
     public void tuihuo3() throws InterruptedException {
-        driver.findElementByAndroidUIAutomator("text(\"销售订单(F6)\")").click();
+        driver.findElementByAndroidUIAutomator("text(\"销售订单\")").click();
         Thread.sleep(3000);
         WebElement dingdan =(WebElement) driver.findElementsById(packagename+":id/orderNumTV").get(3);//列名订单号和列表的id是一样的,坑爹,所以取第四个
         String num =dingdan.getText();//获取订单号
@@ -748,7 +805,24 @@ public class pos {
         Reporter.log("退单3");
     }
 
-    @Test(priority = 28)//锁定
+    @Test(priority = 28)//vip服务退单
+    public void refundVip() throws InterruptedException {
+        driver.findElementByAndroidUIAutomator("text(\"更多\")").click();
+        driver.findElementByAndroidUIAutomator("text(\"VIP服务订单\")").click();
+        Thread.sleep(1000);
+        driver.findElementByAndroidUIAutomator("text(\"退款\")").click();
+        driver.findElementByAndroidUIAutomator("text(\"全部卡费\")").click();
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
+        String num=driver.findElementByAndroidUIAutomator("textContains(\"订单号\")").getText();
+        String nu=num.substring(num.length()-6);
+        driver.findElementByClassName("android.widget.EditText").sendKeys(nu);
+        driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
+        Thread.sleep(2000);
+        driver.findElementById(packagename+":id/ll_close").click();//关闭页面
+
+    }
+
+    @Test(priority = 29)//锁定
     public void suoding() throws InterruptedException {
         driver.findElementById(packagename+":id/ll_lock").click();//点击锁定
         driver.findElementById(packagename+":id/psw_et").sendKeys("1234");//输入密码
@@ -763,9 +837,10 @@ public class pos {
         Reporter.log("锁定");
     }
 
-    @Test(priority = 29)//交接班
+
+    @Test(priority = 30)//交接班
     public void jiaojieban2() throws InterruptedException {
-        driver.findElementByAndroidUIAutomator("text(\"交接班(F7)\")").click();
+        driver.findElementByAndroidUIAutomator("text(\"交接班\")").click();
         Thread.sleep(2000);
         driver.findElementByAndroidUIAutomator("text(\"交班\")").click();
         driver.findElementById(packagename+":id/tv_cancel").click();//取消
@@ -779,9 +854,11 @@ public class pos {
     }
 
 
-    @Test(priority = 30)
-    /*离线收银 1下载商品然后关闭网络 2重新登录,进入离线收银模式 3离线散客收银 4离线vip会员收银 5开启网络  6重新登录
-    7校验不同时间段的上传订单功能,自动上传时间  0-7 13-17 23-24,其他时间不自动上传*/
+
+
+    @Test(priority = 31)
+    //离线收银 1下载商品然后关闭网络 2重新登录,进入离线收银模式 3离线散客收银 4离线vip会员收银 5开启网络  6重新登录
+    //7校验不同时间段的上传订单功能,自动上传时间  0-7 13-17 23-24,其他时间不自动上传
     public void offlineCashier() throws InterruptedException {
 
         //1 下载商品然后关闭网络
@@ -822,7 +899,8 @@ public class pos {
         Thread.sleep(3000);
 
 
-        //3 离线收银
+
+        //3 离线收银1
         driver.findElementById(packagename+":id/ed_ipnut").clear();
         driver.findElementById(packagename+":id/ed_ipnut").sendKeys("ml");//搜索商品,搜索条件ml
         driver.findElementById(packagename+":id/btn_search").click();
@@ -836,7 +914,7 @@ public class pos {
         Thread.sleep(2000);
         xuanze.get(1).click();
         driver.findElementById(packagename+":id/add_number_iv").click();//+按钮,增加库存
-        driver.findElementById(packagename+":id/ed_ipnut").sendKeys("g");//搜索商品,搜索条件g
+        driver.findElementById(packagename+":id/ed_ipnut").sendKeys("ml");//搜索商品,搜索条件g
         driver.findElementById(packagename+":id/btn_search").click();
         Thread.sleep(2000);
         xuanze.get(2).click();
@@ -857,10 +935,10 @@ public class pos {
         driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         driver.findElementByAndroidUIAutomator("text(\"收款\")");
 
-        //4 离线vip会员收银
-        driver.findElementByAndroidUIAutomator("text(\"VIP会员\")").click();
-        Thread.sleep(100);
-        driver.findElementByAndroidUIAutomator("text(\"VIP会员-999\")");//校验切换为vip会员
+        //4 离线收银2
+//        driver.findElementByAndroidUIAutomator("text(\"VIP会员\")").click();
+//        Thread.sleep(100);
+//        driver.findElementByAndroidUIAutomator("text(\"VIP会员-999\")");//校验切换为vip会员
         driver.findElementById(packagename+":id/ed_ipnut").clear();
         driver.findElementById(packagename+":id/ed_ipnut").sendKeys("ml");//搜索商品,搜索条件ml
         driver.findElementById(packagename+":id/btn_search").click();
@@ -915,23 +993,21 @@ public class pos {
 
         //7校验不同时间段的上传订单功能,自动上传时间  0-7 13-16 22-24,其他时间不自动上传
         Calendar calendar = Calendar.getInstance();
+        driver.findElementByAndroidUIAutomator("text(\"报表\")").click();
+        Thread.sleep(100);
+        driver.findElementByAndroidUIAutomator("text(\"离线订单\")").click();
+        Thread.sleep(100);
+        //driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
         int hour = calendar.get(Calendar.HOUR_OF_DAY);//获取当前时间的小时数
-        if ((hour >= 13 && hour <= 16)||(hour >= 22) || (hour <= 7)) {
-            Thread.sleep(3000);
-            driver.findElementByAndroidUIAutomator("text(\"报表\")").click();
-            Thread.sleep(100);
-            driver.findElementByAndroidUIAutomator("text(\"离线订单\")").click();
-            Thread.sleep(100);
-            driver.findElementByAndroidUIAutomator("text(\"上传订单\")").click();
+        if ((hour >= 13 && hour <= 16)||(hour >= 22) || (hour <= 7))  //自动上传的时间段
+        {   driver.findElementByAndroidUIAutomator("text(\"上传订单\")").click();
             Thread.sleep(500);
+            driver.findElementByAndroidUIAutomator("textContains(\"暂无\")");
+            driver.findElementByAndroidUIAutomator("text(\"确认\")").click();
             driver.findElementById(packagename+":id/ll_close").click();//关闭页面
             Thread.sleep(100);
         }
         else {
-            driver.findElementByAndroidUIAutomator("text(\"报表\")").click();
-            Thread.sleep(100);
-            driver.findElementByAndroidUIAutomator("text(\"离线订单\")").click();
-            Thread.sleep(100);
             driver.findElementByAndroidUIAutomator("text(\"未上传\")");
             driver.findElementByAndroidUIAutomator("text(\"上传订单\")").click();
             Thread.sleep(500);
@@ -940,8 +1016,8 @@ public class pos {
             driver.findElementByAndroidUIAutomator("text(\"已上传\")");
             driver.findElementById(packagename+":id/ll_close").click();//关闭页面
             Thread.sleep(100);
-            Reporter.log("离线收银");
-        }
+             }
+        Reporter.log("离线收银");
 
 
 
