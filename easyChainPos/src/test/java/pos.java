@@ -237,6 +237,7 @@ public class pos {
     public void shouyin3() throws InterruptedException {
         driver.findElementByAndroidUIAutomator("text(\"会员(F8)\")").click();
         driver.findElementByClassName("android.widget.EditText").sendKeys(amountVip);
+        driver.findElementByAndroidUIAutomator("text(\"手机号\")").click();
         driver.findElementByAndroidUIAutomator("text(\"确定\")").click();//确定
         Thread.sleep(2000);
         driver.findElementById(packagename+":id/ed_ipnut").clear();
@@ -273,6 +274,7 @@ public class pos {
         //driver.findElementByAndroidUIAutomator("text(\"VIP会员\")").click();
         driver.findElementByAndroidUIAutomator("text(\"会员(F8)\")").click();
         driver.findElementByClassName("android.widget.EditText").sendKeys(amountVip);
+        driver.findElementByAndroidUIAutomator("text(\"手机号\")").click();
         driver.findElementByAndroidUIAutomator("text(\"确定\")").click();//确定
         Thread.sleep(2500);
         driver.findElementByAndroidUIAutomator("resourceId(\""+packagename+":id/tv_real_amount\").text(\"3.10\")").click();//校验价格为3.10,同时触发收款操作
@@ -427,12 +429,14 @@ public class pos {
 
         driver.findElementByAndroidUIAutomator("text(\"会员(F8)\")").click();
         driver.findElementByClassName("android.widget.EditText").sendKeys(amountVip);
+        driver.findElementByAndroidUIAutomator("text(\"手机号\")").click();
         driver.findElementByAndroidUIAutomator("text(\"确定\")").click();//确定
         Thread.sleep(2000);
         driver.findElementByAndroidUIAutomator("text(\"散客\")").click();
         Thread.sleep(2500);
         driver.findElementByAndroidUIAutomator("text(\"会员(F8)\")").click();
         driver.findElementByClassName("android.widget.EditText").sendKeys(amountVip);
+        driver.findElementByAndroidUIAutomator("text(\"手机号\")").click();
         driver.findElementByAndroidUIAutomator("text(\"确定\")").click();//确定
         Thread.sleep(2000);
         driver.findElementById(packagename+":id/ed_ipnut").clear();
@@ -1048,7 +1052,7 @@ public class pos {
 
     }
 
-    @Test(priority = 99)//设置记住密码的功能
+    //@Test(priority = 99)//设置记住密码的功能
     public void set2() throws InterruptedException {
         driver.findElementByAndroidUIAutomator("text(\"设置\")").click();
         driver.findElementByAndroidUIAutomator("text(\"系统设置\")").click(); //打开系统设置
@@ -1087,7 +1091,7 @@ public class pos {
     }*/
 
 
-    @Test(priority = 100)//关闭记住密码的功能
+    //@Test(priority = 100)//关闭记住密码的功能
     public void set3() throws InterruptedException{
         driver.findElementByAndroidUIAutomator("text(\"设置\")").click();
         driver.findElementByAndroidUIAutomator("text(\"系统设置\")").click(); //打开系统设置
