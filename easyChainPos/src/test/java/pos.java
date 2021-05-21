@@ -80,6 +80,7 @@ public class pos {
         desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");//使用哪个自动化引擎,uiautomator2   appium
         //desiredCapabilities.setCapability("automationName", "uiautomator2");//升级为uiautomator2
         //desiredCapabilities.setCapability("ANDROID_UIAUTOMATOR", "uiautomator2");//升级为uiautomator2,Python用的
+
         //File chromedriver = new File("C:\\Users\\gaoyawei\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe");
         //desiredCapabilities.setCapability(AndroidMobileCapabilityType.CHROMEDRIVER_EXECUTABLE, chromedriver.getAbsolutePath());
         //ChromeOptions options = new ChromeOptions();
@@ -169,9 +170,6 @@ public class pos {
 //        driver.findElementByAndroidUIAutomator("text(\"粘贴\")").click();
 
 
-
-
-
         driver.findElementByAndroidUIAutomator("text(\"交接班\")").click();
         Thread.sleep(2000);
         try{
@@ -194,7 +192,6 @@ public class pos {
         Thread.sleep(100);
         //List<AndroidElement> backButton1 = driver.findElementsByClassName("android.widget.ImageView");
         driver.findElementByAndroidUIAutomator("text(\"收银\")").click();
-        //driver.findElementById(packagename+":id/tv_product_name").click();//添加商品
         driver.findElementById(packagename+":id/ed_ipnut").clear();//输入框清空
         driver.findElementById(packagename+":id/ed_ipnut").sendKeys("ml");//搜索商品,搜索条件ml
         driver.findElementById(packagename+":id/btn_search").click();//搜索
